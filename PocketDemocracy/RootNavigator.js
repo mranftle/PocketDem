@@ -3,23 +3,23 @@ import { View, Text } from 'react-native';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-// const NewsFeed = require('./Screens/NewsFeed');
-//
+const NewsFeed = require('./Screens/NewsFeed');
+
 // const MyArticle = () => (
 //   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
 //     <Text>My Article</Text>
 //   </View>
 // );
-//
-// const NewsScreen = StackNavigator({
-//   News: {
-//     screen: NewsFeed,
-//   },
-//   Article: {
-//     path: 'articles/:article',
-//     screen: MyArticle,
-//   },
-// });
+
+const NewsScreen = StackNavigator({
+  News: {
+    screen: NewsFeed,
+  },
+  Article: {
+    path: 'articles/:article',
+    screen: MyArticle,
+  },
+});
 
 
 
@@ -27,11 +27,12 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 //   <View>{ModalStack}</View>
 // );
 
-const NewsScreen = () => (
-  <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-    <Text>News Screen</Text>
-  </View>
-);
+// Simplified version
+// const NewsScreen = () => (
+//   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+//     <Text>News Screen</Text>
+//   </View>
+// );
 
 const ActionsScreen = () => (
   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
