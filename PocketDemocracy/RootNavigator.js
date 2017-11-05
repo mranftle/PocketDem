@@ -1,11 +1,53 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import { TabNavigator } from 'react-navigation';
+import { TabNavigator, StackNavigator } from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-const HomeScreen = () => (
+// const NewsFeed = require('./Screens/NewsFeed');
+//
+// const MyArticle = () => (
+//   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+//     <Text>My Article</Text>
+//   </View>
+// );
+//
+// const NewsScreen = StackNavigator({
+//   News: {
+//     screen: NewsFeed,
+//   },
+//   Article: {
+//     path: 'articles/:article',
+//     screen: MyArticle,
+//   },
+// });
+
+
+
+// const NewsScreen = () => (
+//   <View>{ModalStack}</View>
+// );
+
+const NewsScreen = () => (
   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-    <Text>Home Screen</Text>
+    <Text>News Screen</Text>
+  </View>
+);
+
+const ActionsScreen = () => (
+  <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <Text>Actions Screen</Text>
+  </View>
+);
+
+const SearchScreen = () => (
+  <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <Text>Seach Screen</Text>
+  </View>
+);
+
+const FriendsScreen = () => (
+  <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <Text>Friends Screen</Text>
   </View>
 );
 
@@ -16,13 +58,52 @@ const ProfileScreen = () => (
 );
 
 const RootTabs = TabNavigator({
-  Home: {
-    screen: HomeScreen,
+  News: {
+    screen: NewsScreen,
     navigationOptions: {
-      tabBarLabel: 'Home',
+      tabBarLabel: 'News',
       tabBarIcon: ({ tintColor, focused }) => (
         <Ionicons
-          name={focused ? 'ios-home' : 'ios-home-outline'}
+          name={focused ? 'ios-paper' : 'ios-paper-outline'}
+          size={26}
+          style={{ color: tintColor }}
+        />
+      ),
+    },
+  },
+  Actions: {
+    screen: ActionsScreen,
+    navigationOptions: {
+      tabBarLabel: 'Actions',
+      tabBarIcon: ({ tintColor, focused }) => (
+        <Ionicons
+          name={focused ? 'ios-list' : 'ios-list-outline'}
+          size={26}
+          style={{ color: tintColor }}
+        />
+      ),
+    },
+  },
+  Search: {
+    screen: SearchScreen,
+    navigationOptions: {
+      tabBarLabel: 'Search',
+      tabBarIcon: ({ tintColor, focused }) => (
+        <Ionicons
+          name={focused ? 'ios-search' : 'ios-search'}
+          size={26}
+          style={{ color: tintColor }}
+        />
+      ),
+    },
+  },
+  Friends: {
+    screen: FriendsScreen,
+    navigationOptions: {
+      tabBarLabel: 'Friends',
+      tabBarIcon: ({ tintColor, focused }) => (
+        <Ionicons
+          name={focused ? 'ios-people' : 'ios-people-outline'}
           size={26}
           style={{ color: tintColor }}
         />
