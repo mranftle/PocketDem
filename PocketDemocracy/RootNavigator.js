@@ -1,9 +1,14 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import { ListItem, FlatList, List } from 'react-native-elements';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-const NewsFeed = require('./Screens/NewsFeed');
+// const NewsFeed = require('./Screens/NewsFeed');
+
+import NewsFeedScreen from './Screens/NewsFeedScreen';
+import NewsFeedCell from './Screens/NewsFeedCell';
+import Article from './Screens/ArticleScreen';
 
 // const MyArticle = () => (
 //   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -11,21 +16,21 @@ const NewsFeed = require('./Screens/NewsFeed');
 //   </View>
 // );
 
-const NewsScreen = StackNavigator({
+const Cell = <NewsFeedCell articleTitle="Hailing in St. Louis" />;
+
+const ModalStack = StackNavigator({
   News: {
-    screen: NewsFeed,
+    screen: Cell,
   },
   Article: {
     path: 'articles/:article',
-    screen: MyArticle,
+    screen: Article,
   },
 });
 
-
-
-// const NewsScreen = () => (
-//   <View>{ModalStack}</View>
-// );
+const NewsScreen = () => (
+  <ModalStack />
+);
 
 // Simplified version
 // const NewsScreen = () => (
