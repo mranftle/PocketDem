@@ -68,7 +68,6 @@ class NewsFeedController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  UITableViewCell(style: .subtitle, reuseIdentifier: "newsCell")
         let article = newsArticles[indexPath.row]
-        print("article = \(article)")
         
         cell.textLabel!.text = article.title
         cell.detailTextLabel!.text = article.summary

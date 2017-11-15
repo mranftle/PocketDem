@@ -48,6 +48,24 @@ struct GlobalVars {
         User(username: "test", password: "test")
     ]
     
+    static var currentUser: User?
+    
+    static var interests: [String] = [
+        "Environment",
+        "Business",
+        "Politics",
+        "Technology",
+        "Social Justice"
+    ]
+    
+    static var sources: [String] = [
+        "New York Times",
+        "CNN",
+        "Fox News",
+        "Washington Post",
+        "Wall Street Journal"
+    ]
+    
 //    let d = Date()
 //    let x = "http://www.apple.com/euro/ios/ios8/a/generic/images/og.png"
 //    let a = Article(title: "Hailing in St. Louis", author: "Zach Polsky", source: "New York Times", cellImage: fetchImage(path: x), detailedImage: nil, summary: "It's hailing when it's 74 degrees. Crazy, right?", body: "It hailed a lot on Sunday, but it eventually stopped", timeStamp: d)
