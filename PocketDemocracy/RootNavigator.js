@@ -1,37 +1,43 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import { ListItem, FlatList, List } from 'react-native-elements';
 import { TabNavigator, StackNavigator } from 'react-navigation';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 // const NewsFeed = require('./Screens/NewsFeed');
-//
+
+import NewsFeedScreen from './Screens/NewsFeedScreen';
+import NewsFeedCell from './Screens/NewsFeedCell';
+import Article from './Screens/ArticleScreen';
+
 // const MyArticle = () => (
 //   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
 //     <Text>My Article</Text>
 //   </View>
 // );
-//
-// const NewsScreen = StackNavigator({
-//   News: {
-//     screen: NewsFeed,
-//   },
-//   Article: {
-//     path: 'articles/:article',
-//     screen: MyArticle,
-//   },
-// });
 
+const Cell = <NewsFeedCell articleTitle="Hailing in St. Louis" />;
 
-
-// const NewsScreen = () => (
-//   <View>{ModalStack}</View>
-// );
+const ModalStack = StackNavigator({
+  News: {
+    screen: Cell,
+  },
+  Article: {
+    path: 'articles/:article',
+    screen: Article,
+  },
+});
 
 const NewsScreen = () => (
-  <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-    <Text>News Screen</Text>
-  </View>
+  <ModalStack />
 );
+
+// Simplified version
+// const NewsScreen = () => (
+//   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+//     <Text>News Screen</Text>
+//   </View>
+// );
 
 const ActionsScreen = () => (
   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
