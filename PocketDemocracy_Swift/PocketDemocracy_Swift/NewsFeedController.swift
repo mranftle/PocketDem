@@ -75,7 +75,6 @@ class NewsFeedController: UIViewController, UITableViewDataSource, UITableViewDe
             cell.imageView?.image = resizeImage(image: article.cellImage!, targetSize: CGSize(width: 40, height: 40))
         }
         
-//        cell.imageView?.image = resizeImage(image: candy.image!, targetSize: CGSize(width: 40, height: 40))
         return cell
     }
     
