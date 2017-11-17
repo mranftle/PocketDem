@@ -19,6 +19,7 @@ class SourcesController: UIViewController, UICollectionViewDelegate, UICollectio
     var sources: [String] = []
     var selectedSources: [String] = []
 
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -59,6 +60,15 @@ class SourcesController: UIViewController, UICollectionViewDelegate, UICollectio
             selectedSources = selectedSources.filter( {$0 != source} )
         } else {
             selectedSources.append(source)
+        }
+        collectionView.reloadData()
+    }
+        
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == "" {
+            sources = GlobalVars.sources
+        } else {
+            sources = sources.filter( {$0.contains(searchText)} )
         }
         collectionView.reloadData()
     }

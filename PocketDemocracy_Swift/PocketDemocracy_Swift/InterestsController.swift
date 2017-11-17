@@ -63,13 +63,12 @@ class InterestsController: UIViewController, UICollectionViewDelegate, UICollect
         }
         collectionView.reloadData()
     }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.endEditing(true)
-        if searchBar.text == "" {
+        
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == "" {
             interests = GlobalVars.interests
         } else {
-            interests = interests.filter( {$0.contains(searchBar.text!)} )
+            interests = interests.filter( {$0.contains(searchText)} )
         }
         collectionView.reloadData()
     }

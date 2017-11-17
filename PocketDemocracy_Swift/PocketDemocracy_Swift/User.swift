@@ -11,8 +11,9 @@ import Foundation
 class User: NSObject {
     let username: String
     let password: String
-    let interests: [String]
-    let preferences: [String]
+    var interests: [String]
+    var preferences: [String]
+    var actions: [Action]
     
     public override var description: String {
         return "username: \(username), password: \(password), preferences: \(preferences)"
@@ -23,6 +24,7 @@ class User: NSObject {
         self.password = password
         self.interests = interests
         self.preferences = preferences
+        self.actions = []
     }
     
     convenience init(username: String, password: String) {
