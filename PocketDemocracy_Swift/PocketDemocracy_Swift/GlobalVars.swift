@@ -37,7 +37,7 @@ struct GlobalVars {
             timeStamp: Date(),
             actions: [
                 Action(title: "Call your local representative", duration: "30 Minutes", eventDescription: "Call your local representative to express your thoughts on this issue"),
-                Action(title: "Do a sick kick flip", duration: "Eternity", eventDescription: "Proin quis dolor sapien. Quisque malesuada nibh non ante egestas egestas. Phasellus fringilla nibh volutpat sagittis cursus.\n\nAenean aliquet augue vel felis dapibus, ut consequat nulla eleifend. Ut a diam condimentum, tempor risus id, tincidunt justo. Fusce hendrerit ex sed nulla tincidunt dictum. Sed porttitor, felis sit amet congue semper, tortor orci ultrices enim, nec scelerisque ex nulla et lectus.")
+                Action(title: "Do a sick kick flip", duration: "Eternity", eventDescription: "Proin quis dolor sapien. Quisque malesuada nibh non ante egestas egestas. Phasellus fringilla nibh volutpat sagittis cursus.")
             ]
             
         ),
