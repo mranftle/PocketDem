@@ -13,6 +13,16 @@ struct GlobalVars {
 //    static let taxActions: [Action] = [
 //        [Action(title: "Call your local representative", duration: "30 Minutes", eventDescription: "Call your local representative to express your thoughts on this issue")]
 //    ]
+    static var action: [Action] = [
+        Action(
+            title: "Call your local representative",
+            duration: "30 Minutes",
+            eventDescription: "Call your local representative to express your thoughts on this issue"),
+        Action(
+            title: "Do a sick kick flip",
+            duration: "Eternity",
+            eventDescription: "Yes")
+    ]
     
     static var newsArticles: [Article] = [
         // Taken from https://www.nytimes.com/2017/11/13/business/economy/corporate-tax.html?hp&action=click&pgtype=Homepage&clickSource=story-heading&module=first-column-region&region=top-news&WT.nav=top-news

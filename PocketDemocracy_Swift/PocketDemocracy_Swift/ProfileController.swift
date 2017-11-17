@@ -24,7 +24,10 @@ class ProfileController: UIViewController {
     @IBAction func logoutPressed(_ sender: UIButton) {
         GlobalVars.currentUser = nil
         let loginController = self.storyboard!.instantiateViewController(withIdentifier: "LoginControllerID")
+        let interestsController = self.storyboard!.instantiateViewController(withIdentifier:"InterestControllerID")
         self.present(loginController, animated: true, completion: nil)
+        self.present(interestsController, animated:true, completion:nil)
+        
     }
     
     /*

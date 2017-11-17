@@ -27,6 +27,8 @@
 		25A68C5A1FBA1374008E0E16 /* GlobalVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A68C591FBA1374008E0E16 /* GlobalVars.swift */; };
 		25DE4E001FBA4783006F8C76 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DE4DFF1FBA4783006F8C76 /* LoginController.swift */; };
 		25DE4E021FBA4BC6006F8C76 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DE4E011FBA4BC6006F8C76 /* TabController.swift */; };
+		FE4C6B1B1FBD375300E732BE /* ActionFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4C6B1A1FBD375300E732BE /* ActionFeedController.swift */; };
+		FE4C6B1F1FBD3AB200E732BE /* DetailedActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4C6B1E1FBD3AB200E732BE /* DetailedActionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		25A68C591FBA1374008E0E16 /* GlobalVars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVars.swift; sourceTree = "<group>"; };
 		25DE4DFF1FBA4783006F8C76 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		25DE4E011FBA4BC6006F8C76 /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
+		FE4C6B1A1FBD375300E732BE /* ActionFeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionFeedController.swift; sourceTree = "<group>"; };
+		FE4C6B1E1FBD3AB200E732BE /* DetailedActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedActionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +136,8 @@
 				2514FA691FBA1CA7003A336C /* Article.swift */,
 				2514FA6F1FBA333D003A336C /* Action.swift */,
 				2514FA6A1FBA1CA7003A336C /* NewsFeedController.swift */,
+				FE4C6B1A1FBD375300E732BE /* ActionFeedController.swift */,
+				FE4C6B1E1FBD3AB200E732BE /* DetailedActionView.swift */,
 				2514FA6D1FBA257F003A336C /* DetailedArticleView.swift */,
 				25DE4DFF1FBA4783006F8C76 /* LoginController.swift */,
 				25A456941FB673450089D56F /* LaunchScreen.storyboard */,
@@ -298,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE4C6B1F1FBD3AB200E732BE /* DetailedActionView.swift in Sources */,
 				2514FA6C1FBA1CA7003A336C /* NewsFeedController.swift in Sources */,
 				258B58F31FBBC100001E29E6 /* RegisterController.swift in Sources */,
 				25A68C5A1FBA1374008E0E16 /* GlobalVars.swift in Sources */,
@@ -309,6 +316,7 @@
 				25A4568A1FB673450089D56F /* AppDelegate.swift in Sources */,
 				2514FA701FBA333D003A336C /* Action.swift in Sources */,
 				25A4568C1FB673450089D56F /* FirstViewController.swift in Sources */,
+				FE4C6B1B1FBD375300E732BE /* ActionFeedController.swift in Sources */,
 				2514FA6B1FBA1CA7003A336C /* Article.swift in Sources */,
 				258B58F51FBBC111001E29E6 /* InterestsController.swift in Sources */,
 				2505AEB01FBB358E00FA4636 /* User.swift in Sources */,
