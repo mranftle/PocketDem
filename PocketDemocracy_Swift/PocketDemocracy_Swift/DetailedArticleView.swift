@@ -54,14 +54,14 @@ class DetailedArticleView: UIViewController, UITableViewDataSource, UITableViewD
         return 1
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using seque.destrinationViewController
-        // Pass the selected object to the new view controller
-        if segue.identifier == "showActionDetail" {
-            let detailedVC = segue.destination as! DetailedActionView
-            detailedVC.selectedAction = sender as! Action
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        // Get the new view controller using seque.destrinationViewController
+//        // Pass the selected object to the new view controller
+//        if segue.identifier == "showActionDetail" {
+////            let detailedVC = segue.destination as! DetailedActionView
+//            detailedVC.selectedAction = sender as! Action
+//        }
+//    }
 
     /*
     // MARK: - Navigation

@@ -13,9 +13,15 @@ struct GlobalVars {
 //    static let taxActions: [Action] = [
 //        [Action(title: "Call your local representative", duration: "30 Minutes", eventDescription: "Call your local representative to express your thoughts on this issue")]
 //    ]
-    static var actions: [Action] = [
-        Action(title: "Call your local representative", duration: "30 Minutes", eventDescription: "Call your local representative to express your thoughts on this issue"),
-        Action(title: "Do a sick kick flip", duration: "Eternity", eventDescription: "Yes")
+    static var action: [Action] = [
+        Action(
+            title: "Call your local representative",
+            duration: "30 Minutes",
+            eventDescription: "Call your local representative to express your thoughts on this issue"),
+        Action(
+            title: "Do a sick kick flip",
+            duration: "Eternity",
+            eventDescription: "Yes")
     ]
     
     static var newsArticles: [Article] = [
