@@ -12,10 +12,12 @@ class Action: NSObject {
     let title: String
     let duration: String
     let eventDescription: String
+    let issues: [String]
     
-    init(title: String, duration: String, eventDescription: String) {
+    init(title: String, duration: String, eventDescription: String, issues: [String]) {
         self.title = title
         self.duration = duration
         self.eventDescription = eventDescription
+        self.issues = issues
     }
 }

@@ -19,12 +19,13 @@ class Article: NSObject {
     let body: String
     let timeStamp: Date
     let actions: [Action]
+    let issues: [String]
     
     public override var description: String {
         return "title: \(title), author: \(author), source: \(source)"
     }
     
-    init(title: String, author: String, source: String, cellImage: UIImage?, detailedImage: UIImage?, summary: String, body: String, timeStamp: Date, actions: [Action]) {
+    init(title: String, author: String, source: String, cellImage: UIImage?, detailedImage: UIImage?, summary: String, body: String, timeStamp: Date, actions: [Action], issues: [String]) {
         self.title = title
         self.author = author
         self.source = source
@@ -34,6 +35,7 @@ class Article: NSObject {
         self.body = body
         self.timeStamp = timeStamp
         self.actions = actions
+        self.issues = issues
     }
     
     public func getDateString() -> String {
