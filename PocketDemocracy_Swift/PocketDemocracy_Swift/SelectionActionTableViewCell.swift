@@ -30,7 +30,7 @@ class SelectionActionTableViewCell: UITableViewCell {
             added = true
         }else{
             checkButton.setImage(UIImage(named: "uncheck.png"), for: .normal)
-            added = true
+            added = false
         }
     }
     
