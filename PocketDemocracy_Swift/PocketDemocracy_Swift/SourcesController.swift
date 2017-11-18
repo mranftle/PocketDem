@@ -75,7 +75,7 @@ class SourcesController: UIViewController, UICollectionViewDelegate, UICollectio
     
     @IBAction func registerPressed(_ sender: UIButton) {
         if selectedSources.count > 0 {
-            GlobalVars.users.append(User(username: userInfo.0, password: userInfo.1, interests: userInfo.2, preferences: selectedSources))
+            GlobalVars.users.append(User(username: userInfo.0, password: userInfo.1, interests: userInfo.2, sources: selectedSources))
             self.dismiss(animated: true, completion: nil)
         } else {
             let alert = UIAlertController(title: "Error", message: "Need to add at least 1 source to your preferences", preferredStyle: UIAlertControllerStyle.alert)
