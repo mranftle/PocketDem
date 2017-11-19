@@ -7,27 +7,43 @@
 //
 
 import Foundation
+import UIKit
 
 class User: NSObject {
     let username: String
     let password: String
+    let profPic: UIImage
     var interests: [String]
-    var preferences: [String]
+    var organization:String
+    var sources: [String]
     var actions: [Action]
+  
     
     public override var description: String {
-        return "username: \(username), password: \(password), preferences: \(preferences)"
+        return "username: \(username), password: \(password), sources: \(sources)"
     }
     
-    init(username: String, password: String, interests: [String], preferences: [String]) {
+    init (username: String, password: String, interests: [String], sources:[String], profPicString:String, organization:String, actions:[Action]) {
+        self.organization = organization
+        self.profPic = UIImage(named: profPicString)!
         self.username = username
         self.password = password
         self.interests = interests
-        self.preferences = preferences
+        self.sources = sources
+        self.actions = actions
+        self.organization = organization
+    }
+    init(username: String, password: String, interests: [String], sources: [String]) {
+        self.username = username
+        self.password = password
+        self.interests = interests
+        self.sources = sources
         self.actions = []
+        self.organization = "Unaffiliated"
+        self.profPic = UIImage(named: "nopic.jpg")!
     }
     
     convenience init(username: String, password: String) {
-        self.init(username: username, password: password, interests: [], preferences: [])
+        self.init(username: username, password: password, interests: [], sources: [])
     }
 }
