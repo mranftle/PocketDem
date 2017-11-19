@@ -30,7 +30,7 @@ class User: NSObject {
         self.password = password
         self.interests = interests
         self.sources = sources
-        self.actions = actions
+        self.actions = actionsw
         self.organization = organization
     }
     init(username: String, password: String, interests: [String], sources: [String]) {
