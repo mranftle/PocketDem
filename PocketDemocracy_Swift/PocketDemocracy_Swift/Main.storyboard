@@ -26,40 +26,6 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Profile-->
-        <scene sceneID="mYb-bx-2Ts">
-            <objects>
-                <viewController id="bI1-Rl-4xZ" customClass="ProfileController" customModule="PocketDemocracy_Swift" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="2Bn-uh-fu9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aav-o3-XTu">
-                                <rect key="frame" x="151" y="249" width="72" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Logout"/>
-                                <connections>
-                                    <action selector="logoutPressed:" destination="bI1-Rl-4xZ" eventType="touchUpInside" id="zCE-UM-EAD"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Profile View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="bbP-7e-4kq">
-                                <rect key="frame" x="88" y="20" width="199.5" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="p47-X1-ZHO"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="Wp0-ed-kQd"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bac-y0-7f4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1505" y="1397"/>
-        </scene>
         <!--News-->
         <scene sceneID="mI4-SH-edx">
             <objects>
@@ -366,7 +332,7 @@ Top scientists at Los Alamos National Laboratory, science education associations
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hU8-0S-JoS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3933.5999999999999" y="-791.60419790104959"/>
+            <point key="canvasLocation" x="4272.8000000000002" y="-791.60419790104959"/>
         </scene>
         <!--Action Feed Controller-->
         <scene sceneID="wg7-f3-ORb">
@@ -390,6 +356,9 @@ Top scientists at Los Alamos National Laboratory, science education associations
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="0.079394028178769616" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <segue destination="vdt-bc-Csi" kind="show" identifier="showActionDetails" id="Lpf-Ri-bmt"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -410,31 +379,68 @@ Top scientists at Los Alamos National Laboratory, science education associations
             </objects>
             <point key="canvasLocation" x="2404" y="-451.12443778110946"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Fcu-de-lhg">
+        <!--Search-->
+        <scene sceneID="eig-uX-AjR">
             <objects>
-                <viewController id="fvC-ty-UEH" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="lx0-mf-Kj4">
+                <viewController id="3bl-Bk-88V" customClass="SearchController" customModule="PocketDemocracy_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="egZ-UN-SEt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Search View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="x1c-6b-uPW">
-                                <rect key="frame" x="88" y="312" width="199.5" height="43"/>
+                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Search by topic or events" translatesAutoresizingMaskIntoConstraints="NO" id="bWY-MZ-uMP">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="3bl-Bk-88V" id="Z1z-aK-6Po"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ldk-Iw-njl">
+                                <rect key="frame" x="0.0" y="182" width="375" height="436"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchCell" id="0dm-YQ-fgF">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0dm-YQ-fgF" id="XIA-bb-QSz">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="3bl-Bk-88V" id="ymj-83-gLL"/>
+                                    <outlet property="delegate" destination="3bl-Bk-88V" id="UGe-gI-dsm"/>
+                                </connections>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qGh-ZE-axR">
+                                <rect key="frame" x="16" y="135" width="343" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Actions"/>
+                                    <segment title="Issues"/>
+                                </segments>
+                                <connections>
+                                    <action selector="pressedSegController:" destination="3bl-Bk-88V" eventType="valueChanged" id="jgC-dz-8Gq"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="WUD-ik-G4k"/>
+                        <viewLayoutGuide key="safeArea" id="G8C-SN-ctT"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="search" id="XaN-r9-06E"/>
+                    <navigationItem key="navigationItem" title="Search" id="Kpx-mP-9Ox"/>
+                    <connections>
+                        <outlet property="searchBar" destination="bWY-MZ-uMP" id="0u7-wa-f4D"/>
+                        <outlet property="segController" destination="qGh-ZE-axR" id="NJZ-ir-JkF"/>
+                        <outlet property="tableView" destination="ldk-Iw-njl" id="AVl-Gm-Se0"/>
+                        <segue destination="sSg-iQ-rhV" kind="show" identifier="showSearchedIssue" id="5YE-UD-msQ"/>
+                        <segue destination="vdt-bc-Csi" kind="show" identifier="showSearchedAction" id="zwT-P9-C22"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BGj-af-e3L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vdh-9t-24s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1428" y="214"/>
+            <point key="canvasLocation" x="2404" y="212.74362818590706"/>
         </scene>
         <!--Searched Action-->
         <scene sceneID="j3i-gS-jQe">
@@ -494,7 +500,7 @@ Top scientists at Los Alamos National Laboratory, science education associations
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HUA-x9-gta" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3268" y="212.74362818590706"/>
+            <point key="canvasLocation" x="3268" y="213"/>
         </scene>
         <!--Searched Topic/Event-->
         <scene sceneID="vuU-aS-WYY">
@@ -517,7 +523,7 @@ Top scientists at Los Alamos National Laboratory, science education associations
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="074-NK-K4V" kind="show" identifier="showArticleDetail" id="mlu-L6-0Qk"/>
+                                            <segue destination="O8U-LB-9E8" kind="show" identifier="showArticleDetail" id="HFY-J3-ZLV"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -530,13 +536,14 @@ Top scientists at Los Alamos National Laboratory, science education associations
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="L1J-MU-Tn8"/>
                     </view>
+                    <navigationItem key="navigationItem" id="GJz-q8-YAq"/>
                     <connections>
                         <outlet property="tableView" destination="GRU-Px-WRI" id="jar-d5-SVR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e7J-1E-e9f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3268" y="884"/>
+            <point key="canvasLocation" x="3268" y="913"/>
         </scene>
         <!--Article Title-->
         <scene sceneID="20N-Jk-b6Z">
@@ -647,7 +654,7 @@ Top scientists at Los Alamos National Laboratory, science education associations
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5XO-A6-9gI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3268" y="1652"/>
+            <point key="canvasLocation" x="5402" y="213"/>
         </scene>
         <!--Register-->
         <scene sceneID="L7s-KH-ghP">
@@ -993,7 +1000,7 @@ Top scientists at Los Alamos National Laboratory, science education associations
                     <connections>
                         <segue destination="KTn-K5-tL1" kind="relationship" relationship="viewControllers" id="w8g-nU-XyH"/>
                         <segue destination="Tpg-1j-Yzo" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="fvC-ty-UEH" kind="relationship" relationship="viewControllers" id="qSg-JX-lfX"/>
+                        <segue destination="aWT-Ov-IfN" kind="relationship" relationship="viewControllers" id="eq0-9Y-som"/>
                         <segue destination="Ijs-0e-7QK" kind="relationship" relationship="viewControllers" id="K4E-6E-LfY"/>
                     </connections>
                 </tabBarController>
@@ -1082,13 +1089,16 @@ Top scientists at Los Alamos National Laboratory, science education associations
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="EzB-Ar-J0Z">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventsCell" id="EzB-Ar-J0Z">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EzB-Ar-J0Z" id="APt-aq-NgG">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <segue destination="vdt-bc-Csi" kind="show" identifier="showActionDetails" id="Slx-e9-mxx"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
@@ -1151,7 +1161,7 @@ Top scientists at Los Alamos National Laboratory, science education associations
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eff-w6-Ijn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4141.6000000000004" y="1396.1019490254873"/>
+            <point key="canvasLocation" x="2404" y="1914"/>
         </scene>
         <!--Create Event-->
         <scene sceneID="T7d-AW-d9f">
@@ -1238,7 +1248,7 @@ Top scientists at Los Alamos National Laboratory, science education associations
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="flG-hE-od5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5792.8000000000002" y="1465.8170914542729"/>
+            <point key="canvasLocation" x="3268" y="1764"/>
         </scene>
         <!--Profile-->
         <scene sceneID="kU0-Sr-A98">
@@ -1257,7 +1267,165 @@ Top scientists at Los Alamos National Laboratory, science education associations
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nxI-wT-aSF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2795.1999999999998" y="1397.9010494752624"/>
+            <point key="canvasLocation" x="1428" y="1765"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LXV-ua-BSk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aWT-Ov-IfN" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="search" id="hla-cr-yif"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SG6-mm-y37">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3bl-Bk-88V" kind="relationship" relationship="rootViewController" id="Z4X-BZ-pwb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aqq-i7-rOc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1428" y="213"/>
+        </scene>
+        <!--Article View Controller-->
+        <scene sceneID="ue2-JV-huG">
+            <objects>
+                <viewController id="O8U-LB-9E8" customClass="ArticleViewController" customModule="PocketDemocracy_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CaL-H3-jyR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jJh-4n-ryS">
+                                <rect key="frame" x="-20" y="44" width="415" height="1507"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gb" translatesAutoresizingMaskIntoConstraints="NO" id="Emv-P8-tLU">
+                                        <rect key="frame" x="20" y="20" width="375" height="554"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <view alpha="0.05000000074505806" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wof-hl-mFi">
+                                        <rect key="frame" x="20" y="20" width="375" height="573"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New Mexico hold hearing on education standards omitting references to global warming" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SaP-MD-ieH">
+                                        <rect key="frame" x="47" y="401" width="320" height="160"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="26"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="October 13, 2017" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFc-NR-anh">
+                                        <rect key="frame" x="224" y="553" width="143" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Avenir-BookOblique" family="Avenir" pointSize="11"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Q2-Qm-u0t">
+                                        <rect key="frame" x="47" y="628" width="332" height="510"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <string key="text">ANTA FE, N.M. -- New Mexico's public education secretary is defending new proposed science standards that have been widely criticized for deleting or omitting references to global warming, evolution and the age of the earth.
+
+State education officials are holding their one and only public hearing Monday to gather comments on the proposed standards.
+
+In a public message published Sunday, Public Education Secretary Christopher Ruszkowski says the new standards will give teachers and families flexibility and local control around science materials, curriculum and content. He did not specifically address how the standards address the teaching of evolution and climate change. 
+
+Top scientists at Los Alamos National Laboratory, science education associations and major New Mexico school districts are asking the state to adopt unedited standards developed by a consortium on states.</string>
+                                        <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xCk-Dk-Ysu">
+                                        <rect key="frame" x="20" y="1225" width="375" height="262"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="selectActionCell" rowHeight="83" id="HbU-V8-Pey" customClass="SelectionActionTableViewCell" customModule="PocketDemocracy_Swift" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="83"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HbU-V8-Pey" id="EpV-KL-xcz">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="82.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUc-Ig-z4A" customClass="CheckButton" customModule="PocketDemocracy_Swift" customModuleProvider="target">
+                                                            <rect key="frame" x="325" y="24" width="35" height="35"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="35" id="4u6-gp-5GB"/>
+                                                                <constraint firstAttribute="width" constant="35" id="eAb-fz-U06"/>
+                                                            </constraints>
+                                                            <state key="normal" image="uncheck"/>
+                                                            <connections>
+                                                                <action selector="toggleButton:" destination="HbU-V8-Pey" eventType="touchUpInside" id="fO8-Y1-y8n"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write an email to your local representative" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EO9-ej-cVL">
+                                                            <rect key="frame" x="36" y="9" width="281" height="38"/>
+                                                            <fontDescription key="fontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="16"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration: 1hour" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0Y-aM-24w">
+                                                            <rect key="frame" x="36" y="53" width="167" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="167" id="Oca-1F-o6N"/>
+                                                                <constraint firstAttribute="height" constant="21" id="Q2G-4f-XQJ"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="11"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="EO9-ej-cVL" secondAttribute="trailing" constant="43" id="1I1-9o-tdC"/>
+                                                        <constraint firstItem="EO9-ej-cVL" firstAttribute="leading" secondItem="EpV-KL-xcz" secondAttribute="leadingMargin" constant="21" id="L2l-Em-zm0"/>
+                                                        <constraint firstAttribute="trailing" secondItem="eUc-Ig-z4A" secondAttribute="trailing" constant="15" id="U5g-Sk-cwY"/>
+                                                        <constraint firstItem="EO9-ej-cVL" firstAttribute="leading" secondItem="q0Y-aM-24w" secondAttribute="leading" id="f6k-dB-dBy"/>
+                                                        <constraint firstItem="eUc-Ig-z4A" firstAttribute="centerY" secondItem="EpV-KL-xcz" secondAttribute="centerY" id="fUh-Vw-uNh"/>
+                                                        <constraint firstItem="q0Y-aM-24w" firstAttribute="top" secondItem="EO9-ej-cVL" secondAttribute="bottom" constant="6" id="npk-n1-4ig"/>
+                                                        <constraint firstItem="q0Y-aM-24w" firstAttribute="bottom" secondItem="EpV-KL-xcz" secondAttribute="bottomMargin" constant="2" id="te2-k2-VGp"/>
+                                                        <constraint firstItem="EO9-ej-cVL" firstAttribute="top" secondItem="EpV-KL-xcz" secondAttribute="topMargin" constant="-2" id="uS1-bF-vu7"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="checkButton" destination="eUc-Ig-z4A" id="cMA-kR-O8f"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WHAT YOU CAN DO LOCALLY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aef-Xg-KtU">
+                                        <rect key="frame" x="41" y="1196" width="332" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="19.5"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0uY-ok-3uQ">
+                                        <rect key="frame" x="44" y="1225" width="326" height="0.5"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="jJh-4n-ryS" secondAttribute="trailing" constant="-20" id="2mm-zh-ddM"/>
+                            <constraint firstItem="jJh-4n-ryS" firstAttribute="leading" secondItem="CaL-H3-jyR" secondAttribute="leading" constant="-20" id="6yK-iq-wxn"/>
+                            <constraint firstItem="jJh-4n-ryS" firstAttribute="top" secondItem="CaL-H3-jyR" secondAttribute="top" constant="44" id="MZO-3b-c4B"/>
+                            <constraint firstItem="jJh-4n-ryS" firstAttribute="bottom" secondItem="lSM-0T-d2v" secondAttribute="bottom" id="uXp-kK-sYv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lSM-0T-d2v"/>
+                    </view>
+                    <size key="freeformSize" width="375" height="1600"/>
+                    <connections>
+                        <outlet property="scrollView" destination="jJh-4n-ryS" id="khH-T4-ToL"/>
+                        <outlet property="tableView" destination="xCk-Dk-Ysu" id="pVr-OY-4EV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fse-8t-Lkw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4273" y="1332"/>
         </scene>
     </scenes>
     <resources>
@@ -1265,4 +1433,7 @@ Top scientists at Los Alamos National Laboratory, science education associations
         <image name="second" width="30" height="30"/>
         <image name="uncheck" width="105" height="105"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Lpf-Ri-bmt"/>
+    </inferredMetricsTieBreakers>
 </document>

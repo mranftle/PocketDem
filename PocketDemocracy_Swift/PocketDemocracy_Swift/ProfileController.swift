@@ -78,6 +78,10 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "showActionDetails", sender: GlobalVars.currentUser?.actions[indexPath.row])
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         eventsTable.reloadData()
     }
@@ -90,6 +94,13 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
         self.present(loginController, animated: true, completion: nil)
 
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showActionDetails" {
+            let detailedVC = segue.destination as! SearchedActionController
+            detailedVC.action = sender as! Action
+        }
     }
     
     /*

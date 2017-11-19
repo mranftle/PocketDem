@@ -14,7 +14,12 @@ class ActionFeedController: UIViewController, UITableViewDataSource, UITableView
     var actionList:[Action] = []
     
     override func viewWillAppear(_ animated: Bool) {
-        actionList = GlobalVars.action
+        //actionList = GlobalVars.action
+        if let userActions = GlobalVars.currentUser?.actions {
+            actionList = userActions
+        } else {
+            actionList = []
+        }
         tableView.reloadData()
     }
     
@@ -41,6 +46,17 @@ class ActionFeedController: UIViewController, UITableViewDataSource, UITableView
         cell.textLabel!.text = action.title
         cell.detailTextLabel!.text = action.eventDescription
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "showActionDetails", sender: GlobalVars.currentUser?.actions[indexPath.row])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showActionDetails" {
+            let detailedVC = segue.destination as! SearchedActionController
+            detailedVC.action = sender as! Action
+        }
     }
     
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

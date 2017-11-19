@@ -17,11 +17,11 @@ struct GlobalVars {
         Action(
             title: "Call your local representative",
             duration: "30 Minutes",
-            eventDescription: "Call your local representative to express your thoughts on this issue"),
+            eventDescription: "Call your local representative to express your thoughts on this issue", issues: ["Environment", "Business"]),
         Action(
             title: "Do a sick kick flip",
             duration: "Eternity",
-            eventDescription: "Yes")
+            eventDescription: "Yes", issues: ["Environment", "Business"])
     ]
     
     static var newsArticles: [Article] = [
@@ -61,7 +61,7 @@ struct GlobalVars {
     
     static var users: [User] = [
         User(username: "zach", password: "123"),
-        User(username: "Lucas Scott", password: "test", interests: ["Basketball", "Soccer", "Chad Michael Murray"], sources: ["New York Times", "Washington Post"], profPicString: "lucas.jpg", organization: "One Tree Hill", actions:[ Action(title: "Call your local representative", duration: "30 Minutes", eventDescription: "Call your local representative to express your thoughts on this issue"), Action(title: "Go see Marshmallo", duration: "3 hours", eventDescription: "Go to a rave")]),
+        User(username: "Lucas Scott", password: "test", interests: ["Basketball", "Soccer", "Chad Michael Murray"], sources: ["New York Times", "Washington Post"], profPicString: "lucas.jpg", organization: "One Tree Hill", actions:[ Action(title: "Call your local representative", duration: "30 Minutes", eventDescription: "Call your local representative to express your thoughts on this issue", issues: []), Action(title: "Go see Marshmallo", duration: "3 hours", eventDescription: "Go to a rave", issues: [])]),
         User(username: "test", password: "test")]
     
     static var currentUser: User?
