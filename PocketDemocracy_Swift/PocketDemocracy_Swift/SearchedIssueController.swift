@@ -13,20 +13,25 @@ class SearchedIssueController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var tableView: UITableView!
     
     var issue: String = ""
+    var newsArticles: [Article] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.title = issue
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return newsArticles.count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -34,8 +39,22 @@ class SearchedIssueController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "selectedSearchCell", for: indexPath)
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "selectedSearchCell")
+        let article = newsArticles[indexPath.row]
+
+        cell.textLabel!.text = article.title
+        cell.detailTextLabel!.text = article.summary
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "showArticleDetail", sender: newsArticles[indexPath.row])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showArticleDetail" {
+            let detailedVC = segue.destination as! ArticleViewController
+        }
     }
     
 

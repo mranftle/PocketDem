@@ -107,6 +107,14 @@ class SearchController: UIViewController, UITableViewDelegate, UITableViewDataSo
         else if segue.identifier == "showSearchedIssue" {
             let vc = segue.destination as! SearchedIssueController
             vc.issue = issues[currentIndex]
+            
+            var searchedArticles: [Article] = []
+            for article in GlobalVars.newsArticles {
+                if article.issues.contains(vc.issue) {
+                    searchedArticles.append(article)
+                }
+            }
+            vc.newsArticles = searchedArticles
         }
     }
 
