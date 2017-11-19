@@ -30,6 +30,8 @@
 		D970AF161FBFA50B00F9EB15 /* TagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D970AF141FBFA50A00F9EB15 /* TagCell.swift */; };
 		D970AF171FBFA50B00F9EB15 /* TagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D970AF151FBFA50B00F9EB15 /* TagCell.xib */; };
 		D970AF191FBFA57400F9EB15 /* FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D970AF181FBFA57400F9EB15 /* FlowLayout.swift */; };
+		D970AF1B1FBFC8A600F9EB15 /* TabySegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D970AF1A1FBFC8A600F9EB15 /* TabySegmentedControl.swift */; };
+		D970AF1D1FBFCB8500F9EB15 /* test.xib in Resources */ = {isa = PBXBuildFile; fileRef = D970AF1C1FBFCB8500F9EB15 /* test.xib */; };
 		FE4C6B1B1FBD375300E732BE /* ActionFeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4C6B1A1FBD375300E732BE /* ActionFeedController.swift */; };
 		FE4C6B1F1FBD3AB200E732BE /* DetailedActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4C6B1E1FBD3AB200E732BE /* DetailedActionView.swift */; };
 /* End PBXBuildFile section */
@@ -81,6 +83,8 @@
 		D970AF141FBFA50A00F9EB15 /* TagCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TagCell.swift; path = ../../../../../spring2017wustl/cse438/UMates/UMates/UMates/TagCell.swift; sourceTree = "<group>"; };
 		D970AF151FBFA50B00F9EB15 /* TagCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TagCell.xib; path = ../../../../../spring2017wustl/cse438/UMates/UMates/UMates/TagCell.xib; sourceTree = "<group>"; };
 		D970AF181FBFA57400F9EB15 /* FlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlowLayout.swift; path = ../../../../../spring2017wustl/cse438/UMates/UMates/UMates/FlowLayout.swift; sourceTree = "<group>"; };
+		D970AF1A1FBFC8A600F9EB15 /* TabySegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabySegmentedControl.swift; path = "../../../../../../Downloads/taby-segmented-control-master/UISegmentedControlAsTabbarDemo/TabySegmentedControl.swift"; sourceTree = "<group>"; };
+		D970AF1C1FBFCB8500F9EB15 /* test.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = test.xib; sourceTree = "<group>"; };
 		FE4C6B1A1FBD375300E732BE /* ActionFeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionFeedController.swift; sourceTree = "<group>"; };
 		FE4C6B1E1FBD3AB200E732BE /* DetailedActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedActionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,7 +142,9 @@
 				25A4568B1FB673450089D56F /* FirstViewController.swift */,
 				25A4568D1FB673450089D56F /* SecondViewController.swift */,
 				D970AF181FBFA57400F9EB15 /* FlowLayout.swift */,
+				D970AF1A1FBFC8A600F9EB15 /* TabySegmentedControl.swift */,
 				2514FA671FBA1C9B003A336C /* Main.storyboard */,
+				D970AF1C1FBFCB8500F9EB15 /* test.xib */,
 				25A456921FB673450089D56F /* Assets.xcassets */,
 				2514FA691FBA1CA7003A336C /* Article.swift */,
 				2514FA6F1FBA333D003A336C /* Action.swift */,
@@ -286,6 +292,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D970AF1D1FBFCB8500F9EB15 /* test.xib in Resources */,
 				D970AF171FBFA50B00F9EB15 /* TagCell.xib in Resources */,
 				2514FA681FBA1C9B003A336C /* Main.storyboard in Resources */,
 				25A456961FB673450089D56F /* LaunchScreen.storyboard in Resources */,
@@ -316,6 +323,7 @@
 			files = (
 				FE4C6B1F1FBD3AB200E732BE /* DetailedActionView.swift in Sources */,
 				2514FA6C1FBA1CA7003A336C /* NewsFeedController.swift in Sources */,
+				D970AF1B1FBFC8A600F9EB15 /* TabySegmentedControl.swift in Sources */,
 				258B58F31FBBC100001E29E6 /* RegisterController.swift in Sources */,
 				D970AF191FBFA57400F9EB15 /* FlowLayout.swift in Sources */,
 				25A68C5A1FBA1374008E0E16 /* GlobalVars.swift in Sources */,
