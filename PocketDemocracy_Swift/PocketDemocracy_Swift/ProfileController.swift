@@ -79,7 +79,7 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        eventsTable.reloadData()
     }
     
     @IBAction func logoutPressed(_ sender: UIButton) {
