@@ -20,4 +20,12 @@ class Action: NSObject {
         self.eventDescription = eventDescription
         self.issues = issues
     }
+    
+    override func isEqual(_ object: Any?) -> Bool {
+        if let object = object as? Action {
+            return self.title == object.title
+        } else {
+            return false
+        }
+    }
 }
