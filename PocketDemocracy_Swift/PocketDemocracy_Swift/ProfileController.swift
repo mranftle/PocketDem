@@ -11,6 +11,7 @@ import UIKit
 class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 //    @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBAction func createEvents(_ sender: Any) {
+        
     }
     @IBAction func segmentedControllerSelect(_ sender: Any) {
         switch segmentedController.selectedSegmentIndex {
