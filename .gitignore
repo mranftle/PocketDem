@@ -1,3 +1,5 @@
+*.DS_Store
+PocketDemocracy_Swift/.DS_Store
 node_modules/
 # Created by https://www.gitignore.io/api/swift,macros
 
