@@ -99,7 +99,7 @@ class NewsFeedController: UIViewController, UITableViewDataSource, UITableViewDe
         // Pass the selected object to the new view controller.
         if segue.identifier == "showArticleDetail" {
             let detailedVC = segue.destination as! ArticleViewController
-            //detailedVC.selectedArticle = sender as! Article
+            detailedVC.selectedArticle = sender as! Article
         }
     }
     

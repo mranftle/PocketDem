@@ -90,10 +90,14 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
         GlobalVars.currentUser = nil
        
         let loginController = self.storyboard!.instantiateViewController(withIdentifier: "LoginControllerID")
+<<<<<<< HEAD
 
         self.present(loginController, animated: true, completion: nil)
 
         
+=======
+        self.present(loginController, animated: true, completion: nil)
+>>>>>>> origin/zela_branch
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

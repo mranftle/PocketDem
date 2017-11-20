@@ -22,7 +22,6 @@ class SearchController: UIViewController, UITableViewDelegate, UITableViewDataSo
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        print("in viewDidLoad")
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -9,33 +9,44 @@
 import UIKit
 
 class ArticleViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    var selectedArticle: Article!
 
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var bodyLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var scrollView: UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        titleLabel.text = selectedArticle.title
+        bodyLabel.text = selectedArticle.body
+        dateLabel.text = selectedArticle.getDateString()
+        bodyLabel.sizeToFit()
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
         var contentRect = CGRect.zero
         for view: UIView in scrollView.subviews {
-            print(view.frame.size)
             contentRect = contentRect.union(view.frame)
-            print(contentRect.size)
         }
-        print(contentRect.size)
-        self.scrollView.contentSize = contentRect.size
+        scrollView.contentSize = contentRect.size
 
-        // Do any additional setup after loading the view.
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return selectedArticle.actions.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "selectActionCell", for: indexPath) as! SelectionActionTableViewCell
+        print(selectedArticle.actions)
+        let action = selectedArticle.actions[indexPath.row]
+        cell.action = action
+        cell.actionTitle.text = action.title
         
         return cell
     }

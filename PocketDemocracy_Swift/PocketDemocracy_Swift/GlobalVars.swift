@@ -82,11 +82,11 @@ struct GlobalVars {
         "Wall Street Journal"
     ]
     
-//    static var searchActions: [Action] = [
-//        Action(title: "Volunteer at a local shelter", duration: "3 Hours", eventDescription: "Nullam malesuada risus quis hendrerit auctor. Nulla lacus orci, semper vel nulla quis, bibendum varius eros. Ut dignissim nisi bibendum nunc iaculis iaculis. Mauris nec turpis facilisis, molestie orci vel, commodo diam. Mauris convallis dolor eget nisl pharetra blandit. Morbi quis vestibulum ipsum. Mauris dignissim odio in malesuada porttitor. Donec quis accumsan turpis. Suspendisse ac nulla semper, dignissim nulla mollis, pharetra velit.", issues: ["Politics", "Social Justice"]),
-//        Action(title: "Donate to a foundation", duration: "20 Minutes", eventDescription: "Vivamus a ex vitae ligula sollicitudin eleifend nec sollicitudin magna. Cras hendrerit urna convallis tempus vehicula. Vestibulum non ante leo. Mauris eu porttitor risus. Morbi ac mollis ligula, ut aliquet eros.", issues: ["Politics", "Social Justice"]),
-//        Action(title: "Call your local representative", duration: "30 Minutes", eventDescription: "Call your local representative to express your thoughts on this issue", issues: ["Environment", "Business"])
-//    ]
+    static var searchActions: [Action] = [
+        Action(title: "Volunteer at a local shelter", duration: "3 Hours", eventDescription: "Nullam malesuada risus quis hendrerit auctor. Nulla lacus orci, semper vel nulla quis, bibendum varius eros. Ut dignissim nisi bibendum nunc iaculis iaculis. Mauris nec turpis facilisis, molestie orci vel, commodo diam. Mauris convallis dolor eget nisl pharetra blandit. Morbi quis vestibulum ipsum. Mauris dignissim odio in malesuada porttitor. Donec quis accumsan turpis. Suspendisse ac nulla semper, dignissim nulla mollis, pharetra velit.", issues: ["Politics", "Social Justice"]),
+        Action(title: "Donate to a foundation", duration: "20 Minutes", eventDescription: "Vivamus a ex vitae ligula sollicitudin eleifend nec sollicitudin magna. Cras hendrerit urna convallis tempus vehicula. Vestibulum non ante leo. Mauris eu porttitor risus. Morbi ac mollis ligula, ut aliquet eros.", issues: ["Politics", "Social Justice"]),
+        Action(title: "Call your local representative", duration: "30 Minutes", eventDescription: "Call your local representative to express your thoughts on this issue", issues: ["Environment", "Business"])
+    ]
     
 //    let d = Date()
 //    let x = "http://www.apple.com/euro/ios/ios8/a/generic/images/og.png"
