@@ -10,11 +10,15 @@ import UIKit
 
 class SelectionActionTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var durationLabel: UILabel!
+    @IBOutlet weak var actionTitle: UILabel!
     @IBOutlet weak var checkButton: CheckButton!
     var added = false
+    var action: Action!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         // Initialization code
     }
 
@@ -25,14 +29,26 @@ class SelectionActionTableViewCell: UITableViewCell {
     }
 
     @IBAction func toggleButton(_ sender: UIButton) {
+        
+        let result = GlobalVars.currentUser?.actions.contains(action)
+        if result! {
+            let index = GlobalVars.currentUser?.actions.index(of: self.action)
+            GlobalVars.currentUser?.actions.remove(at: index!)
+        } else {
+            GlobalVars.currentUser?.actions.append(action)
+        }
+        print("actions = \(String(describing: GlobalVars.currentUser?.actions))")
+        
         if added == false{
             checkButton.setImage(UIImage(named: "check.png"), for: .normal)
             added = true
+            
         }else{
             checkButton.setImage(UIImage(named: "uncheck.png"), for: .normal)
             added = false
-        }
+        
     }
     
     
+}
 }
