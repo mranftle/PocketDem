@@ -1,14 +1,16 @@
 //
-//  ProfileController.swift
+//  SearchedActionController.swift
 //  PocketDemocracy_Swift
 //
-//  Created by Zach Polsky on 11/14/17.
+//  Created by Zach Polsky on 11/17/17.
 //  Copyright © 2017 Zach Polsky. All rights reserved.
 //
 
 import UIKit
 
-class ProfileController: UIViewController {
+class SearchedActionController: UIViewController {
+    
+    var action: Action?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,12 +23,7 @@ class ProfileController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func logoutPressed(_ sender: UIButton) {
-        GlobalVars.currentUser = nil
-        let loginController = self.storyboard!.instantiateViewController(withIdentifier: "LoginControllerID")
-        self.present(loginController, animated: true, completion: nil)
-    }
-    
+
     /*
     // MARK: - Navigation
 
