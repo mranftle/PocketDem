@@ -22,7 +22,10 @@ class SearchController: UIViewController, UITableViewDelegate, UITableViewDataSo
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+<<<<<<< HEAD
         print("in viewDidLoad")
+=======
+>>>>>>> origin/zela_branch
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -108,6 +111,7 @@ class SearchController: UIViewController, UITableViewDelegate, UITableViewDataSo
         else if segue.identifier == "showSearchedIssue" {
             let vc = segue.destination as! SearchedIssueController
             vc.issue = issues[currentIndex]
+<<<<<<< HEAD
             
             var searchedArticles: [Article] = []
             for article in GlobalVars.newsArticles {
@@ -116,6 +120,8 @@ class SearchController: UIViewController, UITableViewDelegate, UITableViewDataSo
                 }
             }
             vc.newsArticles = searchedArticles
+=======
+>>>>>>> origin/zela_branch
         }
     }
 
