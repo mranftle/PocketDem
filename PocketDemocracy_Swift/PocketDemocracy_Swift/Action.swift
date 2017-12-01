@@ -16,6 +16,10 @@ class Action: NSObject {
     let time: Date
     let isEvent: Bool
     
+    public override var description: String {
+        return "title = \(title)"
+    }
+    
     init(title: String, duration: String, eventDescription: String) {
         self.title = title
         self.duration = duration

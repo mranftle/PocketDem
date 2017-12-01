@@ -37,16 +37,26 @@ class ArticleViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return selectedArticle.actions.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "selectActionCell", for: indexPath) as! SelectionActionTableViewCell
-        print(selectedArticle.actions)
         let action = selectedArticle.actions[indexPath.row]
         cell.action = action
         cell.actionTitle.text = action.title
+        if (GlobalVars.currentUser?.actions.contains(action))! {
+            cell.added = true
+            cell.checkButton.setImage(UIImage(named: "check.png"), for: .normal)
+        } else {
+            cell.added = false
+            cell.checkButton.setImage(UIImage(named: "uncheck.png"), for: .normal)
+        }
         
         return cell
     }

@@ -9,14 +9,11 @@
 import Foundation
 import UIKit
 
-class createEventController: UIViewController {
+class createEventController: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         eventDescription.text = "Insert Event Description"
         eventDescription.textColor = UIColor.lightGray
-      
-        
     }
     @IBOutlet weak var eventDuration: UITextField!
     @IBOutlet weak var dateSelection: UIDatePicker!
@@ -30,6 +27,7 @@ class createEventController: UIViewController {
 
         let newEvent = Action(title: name!, duration: duration!, eventDescription: description!, time:date)
         GlobalVars.action.append(newEvent)
+        GlobalVars.searchActions.append(newEvent)
         GlobalVars.currentUser?.actions.append(newEvent)
         self.navigationController?.popViewController(animated: true)
         //self.dismiss(animated: true, completion: nil)
@@ -39,6 +37,13 @@ class createEventController: UIViewController {
         if eventDescription.textColor == UIColor.lightGray {
             eventDescription.text = nil
             eventDescription.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Insert Event Description"
+            textView.textColor = UIColor.lightGray
         }
     }
     

@@ -49,20 +49,20 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
         super.viewDidLoad()
         eventsTable.delegate = self
         eventsTable.dataSource = self
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         user = GlobalVars.currentUser
         nameLabel.text = user?.username
         profImage.contentMode = .scaleAspectFit
         profImage.image = user?.profPic
-       
-    
+        
         organizationLabel.text = user?.organization
         if user?.organization == "Unaffiliated" {
             segmentedController.isHidden = true
         }
-       
-       
-        
-        // Do any additional setup after loading the view.
+        eventsTable.reloadData()
     }
   
 
@@ -82,18 +82,11 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
         self.performSegue(withIdentifier: "showActionDetails", sender: GlobalVars.currentUser?.actions[indexPath.row])
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        eventsTable.reloadData()
-    }
-    
     @IBAction func logoutPressed(_ sender: UIButton) {
         GlobalVars.currentUser = nil
-       
         let loginController = self.storyboard!.instantiateViewController(withIdentifier: "LoginControllerID")
-
+        self.tabBarController?.selectedIndex = 0
         self.present(loginController, animated: true, completion: nil)
-
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

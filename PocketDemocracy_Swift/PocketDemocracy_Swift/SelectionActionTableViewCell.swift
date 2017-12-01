@@ -37,8 +37,6 @@ class SelectionActionTableViewCell: UITableViewCell {
         } else {
             GlobalVars.currentUser?.actions.append(action)
         }
-        print("actions = \(String(describing: GlobalVars.currentUser?.actions))")
-        
         if added == false{
             checkButton.setImage(UIImage(named: "check.png"), for: .normal)
             added = true
@@ -46,9 +44,8 @@ class SelectionActionTableViewCell: UITableViewCell {
         }else{
             checkButton.setImage(UIImage(named: "uncheck.png"), for: .normal)
             added = false
-        
     }
-    
+            
     
 }
 }
