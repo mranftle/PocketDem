@@ -15,7 +15,13 @@ class NewsFeedController: UIViewController, UITableViewDataSource, UITableViewDe
     var newsArticles: [Article] = []
     
     override func viewWillAppear(_ animated: Bool) {
-        newsArticles = GlobalVars.newsArticles
+        if let user = GlobalVars.currentUser {
+            newsArticles = GlobalVars.newsArticles.filter( {
+                Set($0.issues).intersection((Set(user.interests))).count > 0
+            } )
+        } else {
+            newsArticles = GlobalVars.newsArticles
+        }
         tableView.reloadData()
     }
     

@@ -22,23 +22,22 @@ class ArticleViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var imageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         titleLabel.text = selectedArticle.title
         bodyLabel.text = selectedArticle.body
         dateLabel.text = selectedArticle.getDateString()
         bodyLabel.sizeToFit()
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
         
         var contentRect = CGRect.zero
         for view: UIView in scrollView.subviews {
             contentRect = contentRect.union(view.frame)
         }
         scrollView.contentSize = contentRect.size
-
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
+        imageView.image = selectedArticle.detailedImage
         tableView.reloadData()
     }
     

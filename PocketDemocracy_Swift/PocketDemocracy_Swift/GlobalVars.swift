@@ -93,7 +93,7 @@ struct GlobalVars {
             summary: "As the worst toxic smog of the year enshrouds New Delhi, India (it\'s 75 times over the World Health Organization’s safety level), schools have been temporarily shuttered, industrial activity paused, and flights canceled, amongst other emergency measures.",
             body: "As the worst toxic smog of the year enshrouds New Delhi, India (it\'s 75 times over the World Health Organization’s safety level), schools have been temporarily shuttered, industrial activity paused, and flights canceled, amongst other emergency measures. \n\n One local sector affected by poisonous air that has gone overlooked, however, is the art community. \n\n To make a statement, photographer Ashish Pareek of Banjara Studios held a classic, cosmopolitan engagement photoshoot for a real-life couple in New Delhi, with one stipulation: They don breathing masks for the images. Parek told Yahoo Lifestyle he felt obligated as both an artist and a citizen to use photography to bring attention to the severity of the situation. \n\n \"The buzz or the alarm regarding pollution is raised only when the situation worsens; otherwise, no one talks about it,\" he said. Further, the clearly hazy photos were in no way retouched: The smog in the northern Indian territory is exactly as bad as it looks, Parek said. \n\n \"Usually we do lots of post-processing in our photos, but here I tried to keep them as natural as they are. I have not increased the highlights or clarity to look hazier,\" he added.\n\n With the toxic smog cited as \"truly a health emergency\" by Indian officials, one expert said that emergency hospital admissions have leapt by 20 percent as of late as people suffer heart and lung complications from the poor air quality. \n\n As a photographer, Parek says he’s well aware that these are not the kind of photos that newlyweds-to-be desire, but it’s likely that they are even more outraged with the current environmental emergency, too.", timeStamp: Date(),
             actions: [],
-            issues: []
+            issues: ["Environment"]
         ),
         // Taken from https://www.theguardian.com/media/2017/nov/10/data-firm-that-worked-for-trump-asked-wikileaks-to-share-hacked-emails
         Article(
@@ -138,11 +138,14 @@ struct GlobalVars {
     ]
 
     static var users: [User] = [
-        User(username: "zach", password: "123"),
+        User(
+            username: "zach",
+            password: "123"
+        ),
         User(
             username: "Lucas Scott",
             password: "test",
-            interests: ["Technology", "Politics"],
+            interests: ["Technology", "Politics", "Environment"],
             sources: ["New York Times", "Washington Post"],
             profPicString: "lucas.jpg",
             organization: "One Tree Hill",
@@ -151,7 +154,15 @@ struct GlobalVars {
                 Action(title: "Go see Marshmallo", duration: "3 hours", eventDescription: "Go to a rave", issues: [])
             ]
         ),
-        User(username: "test", password: "test")
+        User(
+            username: "test",
+            password: "test",
+            interests: ["Business", "Environment"],
+            sources: ["New York Times", "Washington Post"],
+            profPicString: "lucas.jpg",
+            organization: "One Tree Hill",
+            actions: []
+        )
     ]
 
     static var currentUser: User?

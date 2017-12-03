@@ -48,12 +48,13 @@ class SearchedIssueController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "showArticleDetail", sender: newsArticles[indexPath.row])
+        self.performSegue(withIdentifier: "showArticleDetailFromIssue", sender: newsArticles[indexPath.row])
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showArticleDetail" {
+        if segue.identifier == "showArticleDetailFromIssue" {
             let detailedVC = segue.destination as! ArticleViewController
+            detailedVC.selectedArticle = sender as! Article
         }
     }
     
