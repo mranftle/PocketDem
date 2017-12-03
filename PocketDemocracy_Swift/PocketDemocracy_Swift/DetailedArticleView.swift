@@ -34,8 +34,6 @@ class ActionTableCell: UITableViewCell {
         } else {
             GlobalVars.currentUser?.actions.append(action)
         }
-        //updateButtonLabel(result: result!)
-        print("actions = \(String(describing: GlobalVars.currentUser?.actions))")
     }
 }
 

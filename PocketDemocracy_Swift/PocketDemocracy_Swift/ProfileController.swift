@@ -26,8 +26,6 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     
     @IBOutlet weak var eventView: UIView!
-    
-//    @IBAction func segmentClick(_ sender: Any) {
     @IBOutlet weak var eventsTable: UITableView!
     
    
@@ -64,8 +62,6 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
         }
         eventsTable.reloadData()
     }
-  
-
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (user?.actions.count)!

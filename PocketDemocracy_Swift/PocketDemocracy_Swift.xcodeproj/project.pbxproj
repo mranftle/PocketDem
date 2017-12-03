@@ -29,7 +29,6 @@
 		25D373741FC22E1700643432 /* SearchedIssueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D373711FC22E1700643432 /* SearchedIssueController.swift */; };
 		25D373751FC22E1700643432 /* SearchedActionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D373721FC22E1700643432 /* SearchedActionController.swift */; };
 		25D373771FC22E1E00643432 /* CreateEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D373761FC22E1E00643432 /* CreateEvent.swift */; };
-		25D373791FC2380500643432 /* GlobalVars_new.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D373781FC2380400643432 /* GlobalVars_new.swift */; };
 		25DE4E001FBA4783006F8C76 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DE4DFF1FBA4783006F8C76 /* LoginController.swift */; };
 		25DE4E021FBA4BC6006F8C76 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25DE4E011FBA4BC6006F8C76 /* TabController.swift */; };
 		374EFB681FBFA5C5005C1FC9 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374EFB671FBFA5C5005C1FC9 /* ArticleViewController.swift */; };
@@ -85,7 +84,6 @@
 		25D373711FC22E1700643432 /* SearchedIssueController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchedIssueController.swift; sourceTree = "<group>"; };
 		25D373721FC22E1700643432 /* SearchedActionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchedActionController.swift; sourceTree = "<group>"; };
 		25D373761FC22E1E00643432 /* CreateEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEvent.swift; sourceTree = "<group>"; };
-		25D373781FC2380400643432 /* GlobalVars_new.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalVars_new.swift; sourceTree = "<group>"; };
 		25DE4DFF1FBA4783006F8C76 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		25DE4E011FBA4BC6006F8C76 /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		374EFB671FBFA5C5005C1FC9 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
@@ -143,7 +141,6 @@
 		25A456881FB673450089D56F /* PocketDemocracy_Swift */ = {
 			isa = PBXGroup;
 			children = (
-				25D373781FC2380400643432 /* GlobalVars_new.swift */,
 				25A68C591FBA1374008E0E16 /* GlobalVars.swift */,
 				25D373761FC22E1E00643432 /* CreateEvent.swift */,
 				25D373701FC22E1700643432 /* SearchController.swift */,
@@ -328,7 +325,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25D373791FC2380500643432 /* GlobalVars_new.swift in Sources */,
 				FE4C6B1F1FBD3AB200E732BE /* DetailedActionView.swift in Sources */,
 				2514FA6C1FBA1CA7003A336C /* NewsFeedController.swift in Sources */,
 				25D373771FC22E1E00643432 /* CreateEvent.swift in Sources */,
