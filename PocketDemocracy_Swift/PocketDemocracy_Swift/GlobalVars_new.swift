@@ -41,7 +41,83 @@ struct GlobalVars_new {
             ],
             issues: []
         ),
+        Article(
+            title: "FCC WANTS TO KILL NET NEUTRALITY. CONGRESS WILL PAY THE PRICE",
+            author: "Ryan Singel",
+            source: "Wired",
+            cellImage: nil,
+            detailedImage: nil,
+            summary: "FCC CHAIR AJIT Pai\’s plan to repeal net neutrality provisions and reclassify broadband providers from \“common carriers\” to \“information services\” is an unprecedented giveaway to big broadband providers and a danger to the internet. The move would mean the FCC would have almost no oversight authority over broadband providers like Comcast, Verizon, and AT&T.\n\nFor years, those broadband providers have used lawsuits and agency filings to fight FCC oversight and overturn its authority to prevent net neutrality abuses. But never in those companies\’ most feverish dreams did they expect an FCC chair would propose to demolish all net neutrality protections and allow ISPs to extract tolls from every business in the country.\n\nEven industry analysts who expected the reclassification of broadband providers from Title II common carriers to Title I information services were stunned. Following Pai\’s announcement, independent cable analyst Craig Moffett sent out an email to investors entitled \"Shock and Awe and Net Neutrality,\" writing, \“We've known since the election that the FCC would reverse Title II. But we never expected this. Yesterday’s FCC Draft Order on Net Neutrality went much further than we ever could've imagined in not only reversing Title II, but in dismantling virtually all of the important tenets of net neutrality itself.\”\n\nIf Congress allows Pai’s plan to pass, all that will be left of FCC oversight of broadband providers is a weak disclosure requirement: If Verizon, for example, wants to block content, charge sites to be viewable on its network, or create paid fast lanes, the company will simply have to tell its subscribers in their contract’s fine print. (Broadband providers won’t have to disclose, and the FCC won’t have control over, the sneakier ways they\’ve found to mess with the internet.)\n\nEnforcement will be left to the Federal Trade Commission, an agency that\’s never enforced open internet rules and has no ability to formulate its own. The FTC won\’t even be able to protect consumers against most net neutrality violations after the fact, and nor will it be able to protect consumers against greedy broadband providers.\n\nNon-mainstream media news sources across the political spectrum would no longer be able to afford to compete in the marketplace of ideas. Even churches that now reach their members online with streaming sermons, video libraries, and online video chats, would no longer be protected from blocking or access fees.\n\nAnd while the FCC held multiple public hearings with participation from experts during previous net neutrality actions in 2008, 2010, and 2015, this time around, Pai didn\’t hold a single one.\n\nThe only crisis looming is the one that Pai\’s plan will create for entrepreneurs, free markets, free speech, and for Republican members of Congress running for re-election who didn’t make the choice to stop Pai when they had the chance.\n\n",
+            timeStamp: Date(),
+            actions: [
+                Action(
+                    title: "Call your local representative", 
+                    duration: "30 Minutes", 
+                    eventDescription: "Call your local representative to express your thoughts on this issue"
+                ), 
+                Action(
+                    title: "Email your local representative", 
+                    duration: "30 Minutes",
+                    eventDescription: "Email your local representative to express your thoughts on this issue"
+                )
+            ],
+            issues: []
+        ),
+        Article(
+            title: "Meghan Markle engagement to Prince Harry exposes \‘quiet\’ racism",
+            author: "SAPHORA SMITH",
+            source: "NBC News",
+            cellImage: nil,
+            detailedImage: nil,
+            summary: "LONDON — Disparaging reactions to Prince Harry's relationship with actress Meghan Markle have highlighted the racism and class snobbery that persist in British society.\n\nThe American will become the first person who identifies as biracial to join the upper echelons of the U.K.\'s royal family when she marries Harry in May.\n\nBut some black women said coverage of the Los Angeles native\'s roots by some media outlets is indicative of the underlying racism that they experience daily.\n\n\"I feel like racism in the U.K. is pretty insidious,\" said Paula Akpan, a co-founder of Black Girl Festival which celebrates black British women. She added racism tended to be \"not as openly acknowledged\" as in the U.S.\n\nFollowing the royal engagement, The Daily Mail publicized one of its stories with a tweet reading \“from slaves to royalty, Meghan Markle’s upwardly mobile family.\” Last year, the newspaper suggested that Markle was \“(almost) straight outta Compton.\”\n\nJournalist Rachel Johnson, the sister of British Foreign Secretary Boris Johnson, last year wrote in The Mail on Sunday newspaper that Markle could help bring "rich and exotic DNA\" to the royal family. She also described Markle\’s mother as \"a dreadlocked African-American lady from the wrong side of the tracks.\"\n\nThe Spectator magazine this week questioned the \"Suits\" star\'s suitability for Prince Harry because she is divorced and attended a Catholic school.\n\n\“Obviously, 70 years ago, Meghan Markle would have been the kind of woman the prince would have had for a mistress, not a wife,\” a comment piece read.\n\nHarry last year took the highly unusual step of asking the media to stop the \“wave of abuse and harassment\” against Markle.\n\n\“You’re always setting up yourself for a bit of fall when you put expectations on one person of color, or woman of color, and expect them to be the redemption you’ve be waiting for,\” Akpan said.",
+            timeStamp: Date(),
+            actions: [
+                Action(
+                    title: "Risk taking workshop", 
+                    duration: "2 hours",
+                    eventDescription: "The details on this event are now correct. We hope you can join us on 11/11 from 9:30-12:30! Please understand we have limited capacity based on the space and the number of facilitators.\n\nJoin ARC\'s Mass Movement working group for an exploration of risk taking in organizing. Specifically, we will focus on our relative risk as white activists in direct action organizing. How do we understand our own level of risk? What is our willingness to take risks? How do we strengthen our ability to take risks through practice?\n\nThere will be something for everyone, if you are new to organizing, we particularly welcome you to this space. And it's an opportunity to meet other people and build community! Please RSVP at the link in the \"tickets\" section - it\'s totally free!"
 
+                ),
+                Action(
+                    title: "Taking on Racism: From Charlottesville to the Stockley Verdict",
+                    duration: "2 hours",
+                    eventDescription: "White Supremacy has been discussed nationally and locally from the Charlottesville protests to the St Louis Jason Stockley protests. This workshop will provide a \"brave space\" where white folks can support and challenge each other to better understand white privilege and institutional racism."
+                ),
+                Action(
+                    title: "Community-building potluck",
+                    duration: "1 hours",
+                    eventDescription:"Instead of our regular mass movement meeting the first Wednesday of the month, ARC is holding a community building potluck for folks who have been involved in recent actions and who are looking to be more connected. Meet a new friend, deepen your commitment, and depending on what's happening later on, we\'ll join people in the streets after we eat!"
+                )
+            ],
+            issues: []
+        ),
+        Article(
+            title: "Radio station employees fired over racist comments about high school basketball players",
+            author: "Jack Fredson",
+            source: "FOX 8",
+            cellImage: nil,
+            detailedImage: nil,
+            summary; "FOREST CITY, Iowa – Controversial commentary from two radio employees at a high school basketball game in northern Iowa has resulted in their firing after an outcry on social media.\n\nA video clip from a boys basketball game between Forest City High School and Eagle Grove High School was posted to Facebook Sunday night. It contains racist comments by an announcer and a producer. The clip is from a longer online broadcast of the Nov. 28th game, with audio provided by KIOW-FM in Forest City.\n\nThe exchange in the clip is between Orin Harris and a producer. Harris is a longtime announcer for Forest City Athletics, according to KIMT.\n\nThe two make several comments about the ethnicities of some of the Eagle Grove players, discussing the \“Espanol people in Eagle Grove.\”\n\nHarris also says, \“As (President) Trump would say, go back where they came from.\”\n\n",
+            timeStamp: Date(),
+            actions: [
+                Action(
+                    title: "Combating Anti-Muslim Oppression: Understand it. Resist it.",
+                    duration: "2 hours",
+                    eventDescription: "Every day, we hear how Muslims are targeted unfairly by government, media, individuals -- stereotyped as terrorists, banned even if they have legal visas, victimized by hate crimes. Please join the St. Louis Anti-Racist Collective (ARC), Palestine Solidarity Committee (PSC)"
+                ),
+                Action(
+                    title: "Campaign Planning Meeting",
+                    duration: "1 hour",
+                    eventDescription: "This campaign is aimed at engaging white folks in dismantling white supremacy in both institutions and ourselves. Everyone is of course welcome but disclaimer that this will be a space largely populated by white folks and by no means do we expect people of color to do our work for us."
+                ),
+                Action(
+                    title: "Engaging Other White People in Racial Justice: A Workshop",
+                    duration: "1 hour",
+                    eventDescription: "More white people showing up racial justice can help to build and strengthen a multiracial movement. Workshop attendees will learn concrete ways to engage other white people in racial justice. Through storytelling and role plays based on real challenges in the trenches, participants will leave understanding how to grow the base of white people for racial justice in their local organizing. This workshop will be led by Dara Silverman, the National Director for Showing Up for Racial Justice (SURJ)."
+                )
+            ],
+            issues: []
+        ),
         // Taken from http://www.independent.co.uk/news/world/asia/china-labour-activists-missing-investigating-ivanka-trump-shoe-factory-huajian-police-detention-a7764361.html
         Article(
             title: "China Labour Activists Missing Investigating Ivanka Trump Shoe Factory",
