@@ -25,11 +25,26 @@ class EditPreferencesController: UIViewController, UICollectionViewDelegate, UIC
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.navigationItem.hidesBackButton = true
+        let newBackButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.backAction(sender:)))
+        self.navigationItem.leftBarButtonItem = newBackButton
+    }
+    
+    @objc func backAction(sender: UIBarButtonItem) {
+        if (editSources && selectedSources.count > 0) || (!editSources && selectedInterests.count > 0) {
+            self.navigationController?.popViewController(animated: true)
+        } else {
+            let message = (editSources) ? "Need to have at least 1 source in your preferences." : "Need to have at least 1 interest in your preferences."
+            let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         sources = GlobalVars.sources
         interests = GlobalVars.interests
+        searchBar.placeholder = (editSources) ? "Search for news sources" : "Search for interests"
         collectionView.reloadData()
     }
 
@@ -98,7 +113,6 @@ class EditPreferencesController: UIViewController, UICollectionViewDelegate, UIC
 
         collectionView.reloadData()
     }
-    
 
     /*
     // MARK: - Navigation
