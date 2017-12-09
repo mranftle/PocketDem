@@ -46,4 +46,11 @@ class User: NSObject {
     convenience init(username: String, password: String) {
         self.init(username: username, password: password, interests: [], sources: [])
     }
+    
+    convenience init(username: String, password: String, interests: [String], sources: [String], actions: [Action]) {
+        self.init(username: username, password: password, interests: interests, sources: sources, profPicString: "nopic.jpg", organization: "Unaffiliated", actions: actions)
+    }
+    
+    convenience init(username: String, password: String, interests: [String], sources: [String], actions: [Action], profPicString: String) {
+        self.init(username: username, password: password, interests: interests, sources: sources, profPicString: profPicString, organization: "Unaffiliated", actions: actions)    }
 }

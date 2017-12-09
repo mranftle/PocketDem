@@ -50,6 +50,7 @@ class ArticleViewController: UIViewController, UITableViewDelegate, UITableViewD
         let action = selectedArticle.actions[indexPath.row]
         cell.action = action
         cell.actionTitle.text = action.title
+        cell.durationLabel.text = "Duration: \(action.duration)"
         if (GlobalVars.currentUser?.actions.contains(action))! {
             cell.added = true
             cell.checkButton.setImage(UIImage(named: "check.png"), for: .normal)

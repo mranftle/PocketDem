@@ -17,7 +17,7 @@ class NewsFeedController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewWillAppear(_ animated: Bool) {
         if let user = GlobalVars.currentUser {
             newsArticles = GlobalVars.newsArticles.filter( {
-                Set($0.issues).intersection((Set(user.interests))).count > 0
+                Set($0.issues).intersection((Set(user.interests))).count > 0 || user.sources.contains($0.source)
             } )
         } else {
             newsArticles = GlobalVars.newsArticles

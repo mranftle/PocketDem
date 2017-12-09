@@ -9,35 +9,20 @@
 import UIKit
 
 class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-//    @IBOutlet weak var segmentedControl: UISegmentedControl!
-    @IBAction func createEvents(_ sender: Any) {
-        
-    }
-    @IBAction func segmentedControllerSelect(_ sender: Any) {
-        switch segmentedController.selectedSegmentIndex {
-        case 0:
-            eventView.isHidden = false
-        default:
-            eventView.isHidden = true
-        }
-    }
+    
+    @IBOutlet weak var selectedLabel: UILabel!
+    @IBOutlet weak var editInterests: UIButton!
+    @IBOutlet weak var editSources: UIButton!
     @IBOutlet weak var segmentedController: UISegmentedControl!
+    @IBOutlet weak var eventsTable: UITableView!
+    @IBOutlet weak var profImage: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var organizationLabel: UILabel!
+    @IBOutlet weak var createEventButton: UIButton!
+    
+    var user: User?
     var newsArticles: [String] = []
     
-    
-    @IBOutlet weak var eventView: UIView!
-    @IBOutlet weak var eventsTable: UITableView!
-    
-   
-    var user: User?
-   
-    
-    @IBOutlet weak var profImage: UIImageView!
-    @IBOutlet weak var createEvent: UIButton!
-
-    @IBOutlet weak var nameLabel: UILabel!
-
-    @IBOutlet weak var organizationLabel: UILabel!
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -55,27 +40,76 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
         nameLabel.text = user?.username
         profImage.contentMode = .scaleAspectFit
         profImage.image = user?.profPic
-        
         organizationLabel.text = user?.organization
+        
+        segmentedController.selectedSegmentIndex = 0
+        
         if user?.organization == "Unaffiliated" {
-            segmentedController.isHidden = true
+            createEventButton.alpha = 0
         }
+        updateSelectedLabels()
         eventsTable.reloadData()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (user?.actions.count)!
+        switch segmentedController.selectedSegmentIndex {
+        case 0:
+            return (user?.actions.count)!
+        case 1:
+            return (user?.sources.count)!
+        default:
+            return (user?.interests.count)!
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  UITableViewCell(style: .subtitle, reuseIdentifier: "eventsCell")
-        let article = user?.actions[indexPath.row]
-        cell.textLabel!.text = article?.title
+        switch segmentedController.selectedSegmentIndex {
+        case 0:
+            let event = user?.actions[indexPath.row]
+            cell.textLabel!.text = event?.title
+        case 1:
+            let source = user?.sources[indexPath.row]
+            cell.textLabel!.text = source
+        default:
+            let interest = user?.interests[indexPath.row]
+            cell.textLabel!.text = interest
+        }
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "showActionDetails", sender: GlobalVars.currentUser?.actions[indexPath.row])
+        if segmentedController.selectedSegmentIndex == 0 {
+            self.performSegue(withIdentifier: "showActionDetails", sender: GlobalVars.currentUser?.actions[indexPath.row])
+        }
+    }
+    
+    private func updateSelectedLabels() {
+        var labelText: String
+        switch segmentedController.selectedSegmentIndex {
+        case 0:
+            labelText = "Events"
+            createEventButton.isHidden = false
+            editSources.isHidden = true
+            editInterests.isHidden = true
+        case 1:
+            labelText = "Sources"
+            createEventButton.isHidden = true
+            editSources.isHidden = false
+            editInterests.isHidden = true
+        default:
+            labelText = "Interests"
+            createEventButton.isHidden = true
+            editSources.isHidden = true
+            editInterests.isHidden = false
+        }
+        selectedLabel.text = labelText
+    }
+    
+    @IBAction func segmentedControllerSelect(_ sender: Any) {
+        updateSelectedLabels()
+        eventsTable.reloadData()
     }
     
     @IBAction func logoutPressed(_ sender: UIButton) {
@@ -90,6 +124,17 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
             let detailedVC = segue.destination as! SearchedActionController
             detailedVC.action = sender as! Action
         }
+        else if segue.identifier == "showEditSources" {
+            let editPreferencesVC = segue.destination as! EditPreferencesController
+            editPreferencesVC.editSources = true
+            editPreferencesVC.selectedSources = (GlobalVars.currentUser?.sources)!
+        }
+        else if segue.identifier == "showEditInterests" {
+            let editPreferencesVC = segue.destination as! EditPreferencesController
+            editPreferencesVC.editSources = false
+            editPreferencesVC.selectedInterests = (GlobalVars.currentUser?.interests)!
+        }
+        
     }
     
     /*

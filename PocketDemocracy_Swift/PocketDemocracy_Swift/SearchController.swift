@@ -20,13 +20,12 @@ class SearchController: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
-        print("in viewDidLoad")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         actions = GlobalVars.searchActions
+        actions = actions.sorted(by: { $0.dateCreated > $1.dateCreated })
         issues = GlobalVars.interests
         tableView.reloadData()
     }
@@ -37,10 +36,14 @@ class SearchController: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath)
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath)
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "searchCell")
         if segController.selectedSegmentIndex == 0 {
             let action = actions[indexPath.row]
             cell.textLabel?.text = action.title
+            var detailedLabel = "Issues: "
+            detailedLabel.append(action.getIssueString())
+            cell.detailTextLabel?.text = detailedLabel
         } else {
             let issue = issues[indexPath.row]
             cell.textLabel?.text = issue
@@ -70,8 +73,10 @@ class SearchController: UIViewController, UITableViewDelegate, UITableViewDataSo
             if searchText == "" {
                 actions = GlobalVars.searchActions
             } else {
-                actions = actions.filter( {$0.title.contains(searchText)} )
+                actions = actions.filter( {$0.title.contains(searchText)
+                    || $0.getIssueString().contains(searchText)} )
             }
+            actions = actions.sorted(by: { $0.dateCreated > $1.dateCreated })
         } else {
             if searchText == "" {
                 issues = GlobalVars.interests
@@ -84,6 +89,11 @@ class SearchController: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     @IBAction func pressedSegController(_ sender: UISegmentedControl) {
         let searchText = searchBar.text ?? ""
+        if segController.selectedSegmentIndex == 0 {
+            searchBar.placeholder = "Search actions by name or type (Politics, Environment, etc.)"
+        } else {
+            searchBar.placeholder = "Search articles by type (Politics, Environment, etc.)"
+        }
         updateTableBySearch(searchText: searchText)
     }
     

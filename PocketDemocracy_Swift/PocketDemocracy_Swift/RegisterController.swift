@@ -99,8 +99,6 @@ class RegisterController: UIViewController {
         return true
     }
 
-    
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showInterests" {
             let vc = segue.destination as! InterestsController

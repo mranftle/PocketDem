@@ -14,6 +14,7 @@ class SearchedActionController: UIViewController {
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var descriptionText: UITextView!
     @IBOutlet weak var updateActionButton: UIButton!
+    @IBOutlet weak var timeLabel: UILabel!
     
     var action: Action!
     
@@ -39,6 +40,11 @@ class SearchedActionController: UIViewController {
         }
         
         updateActionButton.setTitle(buttonText, for: .normal)
+        
+        timeLabel.alpha = (action.isEvent) ? 1 : 0
+        if action.isEvent {
+            timeLabel.text = "Time: \(action.getDateString())"
+        }
     }
 
     override func didReceiveMemoryWarning() {
