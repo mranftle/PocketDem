@@ -29,7 +29,7 @@ class createEventController: UIViewController {
         let date = dateSelection.date
 
         let newEvent = Action(title: name!, duration: duration!, eventDescription: description!, time:date)
-        GlobalVars.action.append(newEvent)
+        GlobalVars.searchActions.append(newEvent)
         GlobalVars.currentUser?.actions.append(newEvent)
         self.navigationController?.popViewController(animated: true)
         //self.dismiss(animated: true, completion: nil)
