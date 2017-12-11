@@ -121,6 +121,7 @@ struct GlobalVars_new {
             actions: [],
             issues: []
         ),
+
     
         // Taken from https://www.huffingtonpost.com/entry/kids-parents-in-prison-arkansas-voices_us_5995fb5ae4b01f6e801d36f5?utm_hp_ref=social-issues
         Article(
@@ -134,6 +135,7 @@ struct GlobalVars_new {
             timeStamp: Date(),
             actions: [],
             issues: [])
+       
     ]
 
     static var users: [User] = [
