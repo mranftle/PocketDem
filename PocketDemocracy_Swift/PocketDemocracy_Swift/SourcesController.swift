@@ -49,6 +49,8 @@ class SourcesController: UIViewController, UICollectionViewDelegate, UICollectio
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let source = sources[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "sourceCell", for: indexPath) as! SourceCollectionCell
+        cell.layer.borderWidth = 2
+        cell.layer.borderColor = UIColor.black.cgColor
         cell.titleLabel.text = source
         cell.backgroundColor = (selectedSources.contains(source)) ? UIColor.green : UIColor.white
         return cell
@@ -75,7 +77,9 @@ class SourcesController: UIViewController, UICollectionViewDelegate, UICollectio
     
     @IBAction func registerPressed(_ sender: UIButton) {
         if selectedSources.count > 0 {
-            GlobalVars.users.append(User(username: userInfo.0, password: userInfo.1, interests: userInfo.2, sources: selectedSources))
+            let newUser = User(username: userInfo.0, password: userInfo.1, interests: userInfo.2, sources: selectedSources)
+            GlobalVars.users.append(newUser)
+            GlobalVars.currentUser = newUser
             self.dismiss(animated: true, completion: nil)
         } else {
             let alert = UIAlertController(title: "Error", message: "Need to add at least 1 source to your preferences", preferredStyle: UIAlertControllerStyle.alert)

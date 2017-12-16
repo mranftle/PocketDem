@@ -63,6 +63,8 @@ class EditPreferencesController: UIViewController, UICollectionViewDelegate, UIC
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "sourceCell", for: indexPath) as! SourceCollectionCell
+        cell.layer.borderWidth = 2
+        cell.layer.borderColor = UIColor.black.cgColor
         if editSources {
             let source = sources[indexPath.row]
             cell.titleLabel.text = source

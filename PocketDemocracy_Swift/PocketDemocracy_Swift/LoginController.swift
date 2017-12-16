@@ -21,10 +21,12 @@ class LoginController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        GlobalVars.currentUser = nil
         usernameText.text = ""
         passwordText.text = ""
         failedLoginMessage.alpha = 0 // default = 0.85
+        if GlobalVars.currentUser != nil {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 
     override func didReceiveMemoryWarning() {

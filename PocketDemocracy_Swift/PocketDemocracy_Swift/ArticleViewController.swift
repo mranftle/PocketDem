@@ -11,6 +11,7 @@ import UIKit
 class ArticleViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var selectedArticle: Article!
+    var actionIndex = -1
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var bodyLabel: UILabel!
@@ -20,10 +21,9 @@ class ArticleViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var imageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,6 +39,8 @@ class ArticleViewController: UIViewController, UITableViewDelegate, UITableViewD
         scrollView.contentSize = contentRect.size
         imageView.image = selectedArticle.detailedImage
         tableView.reloadData()
+        
+        actionIndex = -1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -65,21 +67,36 @@ class ArticleViewController: UIViewController, UITableViewDelegate, UITableViewD
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        actionIndex = indexPath.row
+        self.performSegue(withIdentifier: "showNewsActionDetails", sender: selectedArticle.actions[indexPath.row])
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "showNewsActionDetails" {
+            if actionIndex == -1 {
+                return false
+            }
+        }
+        return true
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showNewsActionDetails" {
+            let detailedVC = segue.destination as! SearchedActionController
+            detailedVC.action = sender as! Action
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    
+    
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

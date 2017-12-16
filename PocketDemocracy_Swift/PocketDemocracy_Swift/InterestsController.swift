@@ -49,6 +49,8 @@ class InterestsController: UIViewController, UICollectionViewDelegate, UICollect
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let interest = interests[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "interestCell", for: indexPath) as! InterestCollectionCell
+        cell.layer.borderWidth = 2
+        cell.layer.borderColor = UIColor.black.cgColor
         cell.titleLabel.text = interest
         cell.backgroundColor = (selectedInterests.contains(interest)) ? UIColor.orange : UIColor.white
         return cell
