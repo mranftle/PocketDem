@@ -593,32 +593,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcome_1" translatesAutoresizingMaskIntoConstraints="NO" id="Zdm-nE-XWa">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="welcome_1" translatesAutoresizingMaskIntoConstraints="NO" id="Zdm-nE-XWa">
                                 <rect key="frame" x="-51" y="-91" width="476" height="848"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IZC-L9-gxo">
-                                <rect key="frame" x="113.5" y="622" width="147" height="53"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IZC-L9-gxo">
+                                <rect key="frame" x="130" y="622" width="115" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="30"/>
-                                <state key="normal" title="DISCOVER">
+                                <state key="normal" title="DISMISS">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="dismissPressed:" destination="RS2-Ld-3FL" eventType="touchUpInside" id="irL-xU-oD1"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t4E-PU-jag">
+                                <rect key="frame" x="120" y="585" width="134" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="stJ-7U-HOc">
+                                        <rect key="frame" x="44" y="9" width="10" height="10"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ssk-yC-t3d">
+                                        <rect key="frame" x="62" y="9" width="10" height="10"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X7s-VV-YGo">
+                                        <rect key="frame" x="80" y="9" width="10" height="10"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Zdm-nE-XWa" firstAttribute="centerX" secondItem="uaA-rT-pAW" secondAttribute="centerX" id="7Zm-5q-B7O"/>
-                            <constraint firstItem="IZC-L9-gxo" firstAttribute="top" secondItem="l4Z-Ho-Q1F" secondAttribute="top" constant="602" id="DQd-Qo-fYx"/>
-                            <constraint firstItem="Zdm-nE-XWa" firstAttribute="leading" secondItem="uaA-rT-pAW" secondAttribute="leadingMargin" constant="-67" id="Mmn-CT-X8W"/>
-                            <constraint firstItem="IZC-L9-gxo" firstAttribute="centerX" secondItem="Zdm-nE-XWa" secondAttribute="centerX" id="TyX-TW-I9u"/>
-                            <constraint firstItem="Zdm-nE-XWa" firstAttribute="centerY" secondItem="uaA-rT-pAW" secondAttribute="centerY" id="VAZ-v4-hcR"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="Zdm-nE-XWa" secondAttribute="bottom" constant="-90" id="i7R-3V-Ec6"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="l4Z-Ho-Q1F"/>
                     </view>
                     <connections>
+                        <outlet property="circle1" destination="stJ-7U-HOc" id="y26-Mf-HcE"/>
+                        <outlet property="circle2" destination="Ssk-yC-t3d" id="S4a-b7-Ixm"/>
+                        <outlet property="circle3" destination="X7s-VV-YGo" id="Q4S-aS-q5s"/>
                         <outlet property="dismissButton" destination="IZC-L9-gxo" id="K8Z-r5-xRn"/>
                     </connections>
                 </viewController>
@@ -642,18 +660,42 @@
                                 <rect key="frame" x="100" y="622" width="175" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="30"/>
-                                <state key="normal" title="DISCOVER">
+                                <state key="normal" title="DISMISS">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="dismissPressed:" destination="4jv-n9-PM3" eventType="touchUpInside" id="z2A-Zj-BDS"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="74e-ob-A4j">
+                                <rect key="frame" x="120" y="585" width="134" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ywy-gR-Ftj">
+                                        <rect key="frame" x="44" y="9" width="10" height="10"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ui0-8y-rfP">
+                                        <rect key="frame" x="62" y="9" width="10" height="10"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K5q-ot-UW0">
+                                        <rect key="frame" x="80" y="9" width="10" height="10"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="0Dl-aQ-c9w"/>
                     </view>
                     <connections>
+                        <outlet property="circle1" destination="Ywy-gR-Ftj" id="OoO-1d-WCT"/>
+                        <outlet property="circle2" destination="ui0-8y-rfP" id="6Fo-c7-LJ9"/>
+                        <outlet property="circle3" destination="K5q-ot-UW0" id="If5-Oy-fVD"/>
                         <outlet property="dismissButton" destination="x4a-Zy-gjc" id="w2Z-gD-ruj"/>
                     </connections>
                 </viewController>
@@ -773,18 +815,42 @@
                                 <rect key="frame" x="100" y="622" width="175" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="30"/>
-                                <state key="normal" title="DISCOVER">
+                                <state key="normal" title="DISMISS">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="dismissPressed:" destination="XbG-wO-4Kq" eventType="touchUpInside" id="rME-Xk-iLR"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jCY-v7-S3u">
+                                <rect key="frame" x="120" y="585" width="134" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eeg-rA-XFh">
+                                        <rect key="frame" x="44" y="9" width="10" height="10"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6YF-qr-Gzo">
+                                        <rect key="frame" x="62" y="9" width="10" height="10"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6c4-4g-QQR">
+                                        <rect key="frame" x="80" y="9" width="10" height="10"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="TMQ-xH-o7c"/>
                     </view>
                     <connections>
+                        <outlet property="circle1" destination="Eeg-rA-XFh" id="gtU-4T-YPs"/>
+                        <outlet property="circle2" destination="6YF-qr-Gzo" id="Pm0-H3-rTO"/>
+                        <outlet property="circle3" destination="6c4-4g-QQR" id="BQa-7q-rFs"/>
                         <outlet property="dismissButton" destination="qpv-mc-GAa" id="Bgm-7V-djv"/>
                     </connections>
                 </viewController>
