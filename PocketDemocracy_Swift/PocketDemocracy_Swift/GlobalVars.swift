@@ -587,4 +587,6 @@ struct GlobalVars {
     ]
     
     static var presentIntro = true
+    
+    static var actionSelectedInterests: [String] = []
 }

@@ -35,6 +35,9 @@ class RegisterController: UIViewController {
             orgText.alpha = 0
         }
         failedRegisterMessage.alpha = 0
+        let alert = UIAlertController(title: "Create Profile", message: "Start creating a profile by entering a username and password, and selecting if you are affiliated with a certain organization", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {

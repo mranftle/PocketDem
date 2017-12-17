@@ -41,6 +41,16 @@ class Action: NSObject {
         self.dateCreated = Date()
     }
     
+    init(title: String, duration: String, eventDescription: String, issues: [String], time: Date) {
+        self.title = title
+        self.duration = duration
+        self.eventDescription = eventDescription
+        self.issues = issues
+        self.time = time
+        self.isEvent = true
+        self.dateCreated = Date()
+    }
+    
     init(title: String, duration: String, eventDescription: String, time: Date) {
         self.title = title
         self.duration = duration
