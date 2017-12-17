@@ -585,4 +585,6 @@ struct GlobalVars {
         "Wired",
         "NBC News"
     ]
+    
+    static var presentIntro = true
 }

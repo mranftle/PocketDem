@@ -14,8 +14,6 @@ class LoginController: UIViewController {
     @IBOutlet weak var passwordText: UITextField!
     @IBOutlet weak var failedLoginMessage: UILabel!
     
-    var presentIntro = true
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,8 +27,8 @@ class LoginController: UIViewController {
         if GlobalVars.currentUser != nil {
             self.dismiss(animated: true, completion: nil)
         }
-        if presentIntro {
-            presentIntro = false
+        if GlobalVars.presentIntro {
+            GlobalVars.presentIntro = false
             let introController = self.storyboard!.instantiateViewController(withIdentifier: "IntroControllerID")
             self.present(introController, animated: true, completion: nil)
         }
