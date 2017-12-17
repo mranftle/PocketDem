@@ -577,6 +577,90 @@
             </objects>
             <point key="canvasLocation" x="336.80000000000001" y="-717.39130434782612"/>
         </scene>
+        <!--Tutorial Page View Controller-->
+        <scene sceneID="p6r-56-q48">
+            <objects>
+                <pageViewController storyboardIdentifier="IntroControllerID" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="YN8-ak-5gU" customClass="TutorialPageViewController" customModule="PocketDemocracy_Swift" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C6u-Md-hPN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2646" y="-19"/>
+        </scene>
+        <!--Welcome1 View Controller-->
+        <scene sceneID="vJa-9N-3xh">
+            <objects>
+                <viewController storyboardIdentifier="Welcome_1" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RS2-Ld-3FL" customClass="Welcome1ViewController" customModule="PocketDemocracy_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uaA-rT-pAW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcome_1" translatesAutoresizingMaskIntoConstraints="NO" id="Zdm-nE-XWa">
+                                <rect key="frame" x="-51" y="-91" width="476" height="848"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IZC-L9-gxo">
+                                <rect key="frame" x="113.5" y="622" width="147" height="53"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="30"/>
+                                <state key="normal" title="DISCOVER">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissPressed:" destination="RS2-Ld-3FL" eventType="touchUpInside" id="irL-xU-oD1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Zdm-nE-XWa" firstAttribute="centerX" secondItem="uaA-rT-pAW" secondAttribute="centerX" id="7Zm-5q-B7O"/>
+                            <constraint firstItem="IZC-L9-gxo" firstAttribute="top" secondItem="l4Z-Ho-Q1F" secondAttribute="top" constant="602" id="DQd-Qo-fYx"/>
+                            <constraint firstItem="Zdm-nE-XWa" firstAttribute="leading" secondItem="uaA-rT-pAW" secondAttribute="leadingMargin" constant="-67" id="Mmn-CT-X8W"/>
+                            <constraint firstItem="IZC-L9-gxo" firstAttribute="centerX" secondItem="Zdm-nE-XWa" secondAttribute="centerX" id="TyX-TW-I9u"/>
+                            <constraint firstItem="Zdm-nE-XWa" firstAttribute="centerY" secondItem="uaA-rT-pAW" secondAttribute="centerY" id="VAZ-v4-hcR"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Zdm-nE-XWa" secondAttribute="bottom" constant="-90" id="i7R-3V-Ec6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="l4Z-Ho-Q1F"/>
+                    </view>
+                    <connections>
+                        <outlet property="dismissButton" destination="IZC-L9-gxo" id="K8Z-r5-xRn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2qj-iI-S0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3431.1999999999998" y="661.61919040479768"/>
+        </scene>
+        <!--Welcome2 View Controller-->
+        <scene sceneID="CYB-LV-ScJ">
+            <objects>
+                <viewController storyboardIdentifier="Welcome_2" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4jv-n9-PM3" customClass="Welcome2ViewController" customModule="PocketDemocracy_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d6B-9w-zbc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="welcome_2" translatesAutoresizingMaskIntoConstraints="NO" id="rU9-rn-cIr">
+                                <rect key="frame" x="-51" y="-91" width="476" height="848"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4a-Zy-gjc">
+                                <rect key="frame" x="100" y="622" width="175" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="30"/>
+                                <state key="normal" title="DISCOVER">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissPressed:" destination="4jv-n9-PM3" eventType="touchUpInside" id="z2A-Zj-BDS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="0Dl-aQ-c9w"/>
+                    </view>
+                    <connections>
+                        <outlet property="dismissButton" destination="x4a-Zy-gjc" id="w2Z-gD-ruj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4H8-63-HMb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2647.1999999999998" y="661.61919040479768"/>
+        </scene>
         <!--Login Controller-->
         <scene sceneID="j6a-gw-AJ0">
             <objects>
@@ -672,6 +756,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FLk-Zb-V3s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-759.20000000000005" y="-0.44977511244377816"/>
+        </scene>
+        <!--Welcome3 View Controller-->
+        <scene sceneID="XOq-ai-QLb">
+            <objects>
+                <viewController storyboardIdentifier="Welcome_3" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XbG-wO-4Kq" customClass="Welcome3ViewController" customModule="PocketDemocracy_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iHo-3T-g2o">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="welcome_3" translatesAutoresizingMaskIntoConstraints="NO" id="ktD-sJ-hRK">
+                                <rect key="frame" x="-51" y="-91" width="476" height="848"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qpv-mc-GAa">
+                                <rect key="frame" x="100" y="622" width="175" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="30"/>
+                                <state key="normal" title="DISCOVER">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissPressed:" destination="XbG-wO-4Kq" eventType="touchUpInside" id="rME-Xk-iLR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="TMQ-xH-o7c"/>
+                    </view>
+                    <connections>
+                        <outlet property="dismissButton" destination="qpv-mc-GAa" id="Bgm-7V-djv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HKh-JF-zIN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1938.4000000000001" y="661.61919040479768"/>
         </scene>
         <!--Tab Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -1110,13 +1229,13 @@
                                 <rect key="frame" x="-20" y="64" width="415" height="1487"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="25W-LT-WLJ" userLabel="Image Container">
-                                        <rect key="frame" x="19" y="0.0" width="377" height="593"/>
+                                        <rect key="frame" x="20" y="0.0" width="377" height="593"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YsE-ri-9ha">
-                                                <rect key="frame" x="1" y="0.0" width="375" height="593"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="593"/>
                                             </imageView>
                                             <view alpha="0.05000000074505806" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JwG-ez-cPG" userLabel="opacity">
-                                                <rect key="frame" x="1" y="0.0" width="375" height="593"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="593"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New Mexico hold hearing on education standards omitting references to global warming" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MvJ-tT-ZoK">
@@ -1152,10 +1271,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cxs-A2-Inu">
-                                        <rect key="frame" x="19" y="593" width="377" height="532"/>
+                                        <rect key="frame" x="20" y="593" width="377" height="532"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xyJ-f6-BkE">
-                                                <rect key="frame" x="22" y="20" width="333" height="492"/>
+                                                <rect key="frame" x="21" y="20" width="333" height="492"/>
                                                 <string key="text">ANTA FE, N.M. -- New Mexico's public education secretary is defending new proposed science standards that have been widely criticized for deleting or omitting references to global warming, evolution and the age of the earth.
 
 State education officials are holding their one and only public hearing Monday to gather comments on the proposed standards.
@@ -1177,7 +1296,7 @@ Top scientists at Los Alamos National Laboratory, science education associations
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cjQ-5L-Dqn" userLabel="Actions Continer">
-                                        <rect key="frame" x="19" y="1144" width="377" height="343"/>
+                                        <rect key="frame" x="20" y="1144" width="377" height="343"/>
                                         <subviews>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5If-Ls-G3c">
                                                 <rect key="frame" x="0.0" y="61" width="377" height="262"/>
@@ -1242,13 +1361,13 @@ Top scientists at Los Alamos National Laboratory, science education associations
                                                 </connections>
                                             </tableView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WHAT YOU CAN DO LOCALLY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJT-LP-AlE">
-                                                <rect key="frame" x="46" y="32" width="285" height="22.5"/>
+                                                <rect key="frame" x="45" y="32" width="285" height="22.5"/>
                                                 <fontDescription key="fontDescription" name="Baskerville" family="Baskerville" pointSize="19.5"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRZ-vr-MoX">
-                                                <rect key="frame" x="24" y="61" width="326" height="1"/>
+                                                <rect key="frame" x="23" y="61" width="326" height="1"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="326" id="0ur-NV-1JH"/>
@@ -1316,6 +1435,9 @@ Top scientists at Los Alamos National Laboratory, science education associations
         <image name="newspaper" width="25" height="25"/>
         <image name="profile" width="25" height="25"/>
         <image name="uncheck" width="105" height="105"/>
+        <image name="welcome_1" width="828" height="1472"/>
+        <image name="welcome_2" width="828" height="1472"/>
+        <image name="welcome_3" width="828" height="1472"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Kkq-4S-EFE"/>
