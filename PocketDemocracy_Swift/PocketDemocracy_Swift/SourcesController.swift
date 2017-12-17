@@ -15,7 +15,7 @@ class SourceCollectionCell: UICollectionViewCell {
 
 class SourcesController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate {
     
-    var userInfo: (String, String, [String]) = ("", "", [])
+    var userInfo: (String, String, String, [String]) = ("", "", "", [])
     var sources: [String] = []
     var selectedSources: [String] = []
 
@@ -31,6 +31,9 @@ class SourcesController: UIViewController, UICollectionViewDelegate, UICollectio
     override func viewWillAppear(_ animated: Bool) {
         sources = GlobalVars.sources
         collectionView.reloadData()
+        let alert = UIAlertController(title: "Add Sources", message: "Select from sources you're interested in reading by tapping on the box corresponding to that news source. Selections can be deselected by tapping on the box again", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -77,7 +80,8 @@ class SourcesController: UIViewController, UICollectionViewDelegate, UICollectio
     
     @IBAction func registerPressed(_ sender: UIButton) {
         if selectedSources.count > 0 {
-            let newUser = User(username: userInfo.0, password: userInfo.1, interests: userInfo.2, sources: selectedSources)
+            let newUser = (userInfo.2 != "") ? User(username: userInfo.0, password: userInfo.1, interests: userInfo.3, sources: selectedSources, profPicString: "nopic.jpg", organization: userInfo.2, actions: []) : User(username: userInfo.0, password: userInfo.1, interests: userInfo.3, sources: selectedSources)
+
             GlobalVars.users.append(newUser)
             GlobalVars.currentUser = newUser
             self.dismiss(animated: true, completion: nil)

@@ -15,7 +15,7 @@ class InterestCollectionCell: UICollectionViewCell {
 
 class InterestsController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate {
         
-    var userPass: (String, String) = ("", "")
+    var userPass: (String, String, String) = ("", "", "")
     var interests: [String] = []
     var selectedInterests: [String] = []
     
@@ -31,6 +31,9 @@ class InterestsController: UIViewController, UICollectionViewDelegate, UICollect
     override func viewWillAppear(_ animated: Bool) {
         interests = GlobalVars.interests
         collectionView.reloadData()
+        let alert = UIAlertController(title: "Add Interests", message: "Select from topics you're interested in by tapping on the box corresponding to that interest. Selections can be deselected by tapping on the box again", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -90,7 +93,7 @@ class InterestsController: UIViewController, UICollectionViewDelegate, UICollect
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showSources" {
             let vc = segue.destination as! SourcesController
-            vc.userInfo = (userPass.0, userPass.1, selectedInterests)
+            vc.userInfo = (userPass.0, userPass.1, userPass.2, selectedInterests)
         }
     }
     

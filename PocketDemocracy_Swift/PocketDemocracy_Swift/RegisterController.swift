@@ -15,6 +15,8 @@ class RegisterController: UIViewController {
     @IBOutlet weak var passwordText: UITextField!
     @IBOutlet weak var confirmPassText: UITextField!
     @IBOutlet weak var failedRegisterMessage: UILabel!
+    @IBOutlet weak var orgSwitch: UISwitch!
+    @IBOutlet weak var orgText: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,12 @@ class RegisterController: UIViewController {
         usernameText.text = ""
         passwordText.text = ""
         confirmPassText.text = ""
+        if orgSwitch.isOn {
+            orgText.alpha = 1
+            orgText.text = ""
+        } else {
+            orgText.alpha = 0
+        }
         failedRegisterMessage.alpha = 0
     }
 
@@ -38,6 +46,7 @@ class RegisterController: UIViewController {
         let username = usernameText.text ?? ""
         let password = passwordText.text ?? ""
         let confirmPass = confirmPassText.text ?? ""
+        let organization = orgText.text ?? ""
         
         if username == "" || password == "" || confirmPass == "" {
             return false
@@ -52,6 +61,14 @@ class RegisterController: UIViewController {
                 return false
             }
         }
+        
+        if orgSwitch.isOn && organization == "" {
+            let alert = UIAlertController(title: "Error", message: "Need to enter a valid organization name", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return false
+        }
+        
         return true
     }
     
@@ -89,6 +106,11 @@ class RegisterController: UIViewController {
     @IBAction func cancelPressed(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func orgSwitchChanged(_ sender: UISwitch) {
+        orgText.alpha = (orgSwitch.isOn) ? 1 : 0
+    }
+    
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == "showInterests" {
             if !isRegisterSuccessful() {
@@ -102,7 +124,7 @@ class RegisterController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showInterests" {
             let vc = segue.destination as! InterestsController
-            vc.userPass = (usernameText.text!, passwordText.text!)
+            vc.userPass = (usernameText.text!, passwordText.text!, orgText.text!)
             updateRegisterLabels(result: true)
         }
     }
