@@ -48,6 +48,8 @@ class ProfileController: UIViewController, UITableViewDelegate, UITableViewDataS
             createEventButton.alpha = 0
         }
         updateSelectedLabels()
+        createEventButton.isHidden = true
+
         eventsTable.reloadData()
     }
 

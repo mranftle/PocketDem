@@ -9,7 +9,9 @@
 import UIKit
 
 class ActionFeedController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+   
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var createEventButton: UIButton!
     
     var actionList:[Action] = []
     
@@ -20,6 +22,7 @@ class ActionFeedController: UIViewController, UITableViewDataSource, UITableView
         } else {
             actionList = []
         }
+        createEventButton.isHidden = GlobalVars.currentUser?.organization == "Unaffiliated"
         tableView.reloadData()
     }
     

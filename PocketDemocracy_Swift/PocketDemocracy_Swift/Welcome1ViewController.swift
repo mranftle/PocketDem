@@ -10,7 +10,6 @@ import UIKit
 
 class Welcome1ViewController: UIViewController {
 
-    @IBOutlet weak var dismissButton: UIButton!
     @IBOutlet weak var circle1: UIView!
     @IBOutlet weak var circle2: UIView!
     @IBOutlet weak var circle3: UIView!
@@ -19,7 +18,7 @@ class Welcome1ViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        dismissButton.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.7)
+
         circle1.layer.cornerRadius = circle1.frame.size.width/2
         circle1.clipsToBounds = true
         circle1.layer.borderColor = UIColor.white.cgColor
@@ -39,10 +38,6 @@ class Welcome1ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func dismissPressed(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
     }
     
     /*
